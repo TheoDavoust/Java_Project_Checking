@@ -15,5 +15,8 @@ public class Main {
 		f.setSize(400, 500);
 		f.setLayout(null);
 		f.setVisible(true);
+		
+		RoundedTime time = new RoundedTime();
+		System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
 	}
 }
