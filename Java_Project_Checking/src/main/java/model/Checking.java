@@ -10,6 +10,7 @@ public class Checking implements Serializable{
 	private Worker worker;
 	private RoundedTime time;
 	
+	// Seul constructeur necessaire pour la création d'un checking qui va etre traite plus tard par l'appli
 	public Checking(Worker worker) {
 		time = new RoundedTime();
 		this.worker = worker;
