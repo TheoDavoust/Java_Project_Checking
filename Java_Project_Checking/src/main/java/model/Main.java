@@ -28,7 +28,7 @@ public class Main {
 		System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
 
 		try {
-			FileOutputStream fout = new FileOutputStream("C:/Users/theod/Documents/test.txt");
+			FileOutputStream fout = new FileOutputStream("C:/Users/theod/Documents/test.txt");	// Doit etre modifie en chemin relatif
 			ObjectOutputStream oos = new ObjectOutputStream(fout);
 			oos.writeObject(time);
 		}catch(IOException e) {
@@ -36,7 +36,7 @@ public class Main {
 		}
 		
 		try {
-			FileInputStream fin = new FileInputStream("C:/Users/theod/Documents/test.txt");
+			FileInputStream fin = new FileInputStream("C:/Users/theod/Documents/test.txt");		// Doit etre modifie en chemin relatif
 			ObjectInputStream ois = new ObjectInputStream(fin);
 			time = (RoundedTime)ois.readObject();
 			System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
