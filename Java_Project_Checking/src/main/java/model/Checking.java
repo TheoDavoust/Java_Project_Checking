@@ -1,6 +1,12 @@
 package model;
 
-public class Checking {
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+import java.io.ObjectInputStream.GetField;
+
+public class Checking implements Serializable{
 	private Worker worker;
 	private RoundedTime time;
 	
@@ -24,6 +30,4 @@ public class Checking {
 	public void setTime(RoundedTime time) {
 		this.time = time;
 	}
-	
-	
 }

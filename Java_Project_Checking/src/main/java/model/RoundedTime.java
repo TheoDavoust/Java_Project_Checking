@@ -1,19 +1,21 @@
 package model;
 
-import java.time.LocalDate;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+import java.io.ObjectInputStream.GetField;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
-public class RoundedTime {
+public class RoundedTime implements Serializable{
 	private int hours;
 	private int minutes;
-	private LocalDate date;
 	
 	public RoundedTime() {
 		LocalTime time = LocalTime.now();
 		LocalTime rounded = time.truncatedTo(ChronoUnit.HOURS).plusMinutes(15 * (time.getMinute() / 15));
 		
-		date = LocalDate.now();
 		hours = rounded.getHour();
 		minutes = rounded.getMinute();
 	}
@@ -25,9 +27,4 @@ public class RoundedTime {
 	public int getMinute() {
 		return minutes;
 	}
-
-	public LocalDate getDate() {
-		return date;
-	}
-	
 }

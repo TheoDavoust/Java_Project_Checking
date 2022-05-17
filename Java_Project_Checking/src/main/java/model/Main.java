@@ -1,6 +1,13 @@
 package model;
 
-import javax.swing.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 public class Main {
 
@@ -18,5 +25,22 @@ public class Main {
 		
 		RoundedTime time = new RoundedTime();
 		System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
+
+		try {
+			FileOutputStream fout = new FileOutputStream("C:/Users/theod/Documents/test.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			oos.writeObject(time);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			FileInputStream fin = new FileInputStream("C:/Users/theod/Documents/test.txt");
+			ObjectInputStream ois = new ObjectInputStream(fin);
+			time = (RoundedTime)ois.readObject();
+			System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
