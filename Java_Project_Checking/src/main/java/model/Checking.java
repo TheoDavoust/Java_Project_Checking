@@ -1,18 +1,18 @@
 package model;
 
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.time.LocalDate;
 import java.io.ObjectInputStream.GetField;
+=======
+>>>>>>> refs/remotes/origin/master
 
 public class Checking implements Serializable{
 	private Worker worker;
 	private RoundedTime time;
 	private LocalDate date;
 	
-	// Seul constructeur necessaire pour la création d'un checking qui va etre traite plus tard par l'appli
+	// Seul constructeur necessaire pour la creation d'un checking qui va etre traite plus tard par l'appli
 	public Checking(Worker worker) {
 		time = new RoundedTime();
 		this.worker = worker;
