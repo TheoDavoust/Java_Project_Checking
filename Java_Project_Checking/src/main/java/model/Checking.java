@@ -1,11 +1,8 @@
 package model;
 
 import java.io.Serializable;
-<<<<<<< HEAD
 import java.time.LocalDate;
 import java.io.ObjectInputStream.GetField;
-=======
->>>>>>> refs/remotes/origin/master
 
 public class Checking implements Serializable{
 	private Worker worker;
