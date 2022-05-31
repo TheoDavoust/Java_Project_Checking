@@ -24,24 +24,18 @@ public class Main {
 		f.setLayout(null);
 		f.setVisible(true);
 		
-		RoundedTime time = new RoundedTime();
-		System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
-
-		try {
-			FileOutputStream fout = new FileOutputStream("C:/Users/theod/Documents/test.txt");	// Doit etre modifie en chemin relatif
-			ObjectOutputStream oos = new ObjectOutputStream(fout);
-			oos.writeObject(time);
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
+		Worker worker = new Worker(0, "work_guy");
+		Storage storage = new Storage();
 		
-		try {
-			FileInputStream fin = new FileInputStream("C:/Users/theod/Documents/test.txt");		// Doit etre modifie en chemin relatif
-			ObjectInputStream ois = new ObjectInputStream(fin);
-			time = (RoundedTime)ois.readObject();
-			System.out.println(String.format("%02d:%02d", time.getHour(), time.getMinute()));
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		storage.getCheckings().add(new Checking(worker));
+		storage.getWorkers().add(worker);
+		
+		System.out.println(storage);
+		storage.save();
+		
+		Storage other = new Storage();
+		System.out.println(other);
+		other.load();
+		System.out.println(other);
 	}
 }
