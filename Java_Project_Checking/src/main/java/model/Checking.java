@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.io.ObjectInputStream.GetField;
 
 public class Checking implements Serializable{
 	private Worker worker;

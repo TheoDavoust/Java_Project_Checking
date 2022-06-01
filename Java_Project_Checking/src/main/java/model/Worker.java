@@ -1,9 +1,5 @@
 package model;
 
-import java.io.IOException;
-import java.io.ObjectInputStream.GetField;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 public class Worker implements Serializable{

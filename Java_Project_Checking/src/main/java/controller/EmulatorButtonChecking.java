@@ -6,9 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Set;
 
-import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.Timer;
 
 import model.IdTimeChecking;
 import view.FeedBackLabel;

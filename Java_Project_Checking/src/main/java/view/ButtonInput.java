@@ -1,9 +1,9 @@
 package view;
 
+import java.awt.Font;
 import java.util.Set;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import controller.EmulatorButtonChecking;
@@ -23,8 +23,9 @@ public class ButtonInput extends JButton{
 		init();
 	}
 	
-	public void init() {		
-		this.setText("Submit");
+	public void init() {
+		this.setFont(new Font("Arial", Font.PLAIN, 32));
+		this.setText("Valider");
 		this.addActionListener(new EmulatorButtonChecking(error_label, text_field, stack));
 	}
 }

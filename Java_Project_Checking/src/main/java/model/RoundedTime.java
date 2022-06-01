@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 

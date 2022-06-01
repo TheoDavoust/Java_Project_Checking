@@ -1,18 +1,14 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.util.Set;
 import java.util.TreeSet;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.border.Border;
 
 import controller.EmulatorTimerChekcing;
 import controller.EmulatorTimerClock;
@@ -25,7 +21,7 @@ public class EmulatorWindow extends JFrame{
 	private TextInput text_input;
 	private ButtonInput button_input;
 	private SimpleLabel current_time;
-	private FeedBackLabel error_output;
+	private FeedBackLabel feedback_output;
 	
 	private Timer timer;
 	
@@ -41,8 +37,8 @@ public class EmulatorWindow extends JFrame{
 		
 		this.text_input = new TextInput();
 		this.current_time = new SimpleLabel();
-		this.error_output = new FeedBackLabel();
-		this.button_input = new ButtonInput(error_output, text_input, stack);
+		this.feedback_output = new FeedBackLabel();
+		this.button_input = new ButtonInput(feedback_output, text_input, stack);
 		
 		this.timer = new Timer(1000, null);
 		timer.start();
@@ -54,12 +50,12 @@ public class EmulatorWindow extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setMinimumSize(new Dimension(480, 480));
 		
-		border_container.setLayout(new BorderLayout(10, 10));
+		border_container.setLayout(new BorderLayout(50, 50));
 		input_container.setLayout(new GridLayout());
 		
 		border_container.add(input_container, BorderLayout.SOUTH);
 		border_container.add(current_time, BorderLayout.CENTER);
-		border_container.add(error_output, BorderLayout.NORTH);
+		border_container.add(feedback_output, BorderLayout.NORTH);
 		
 		input_container.add(text_input);
 		input_container.add(button_input);
@@ -72,7 +68,7 @@ public class EmulatorWindow extends JFrame{
 		/** Add timer methods **/
 		timer.addActionListener(new EmulatorTimerClock(current_time));
 		timer.getActionListeners()[0].actionPerformed(null);
-		timer.addActionListener(new EmulatorTimerChekcing(text_input, error_output));
+		timer.addActionListener(new EmulatorTimerChekcing(text_input, feedback_output));
 		
 		timer.restart();
 	}
