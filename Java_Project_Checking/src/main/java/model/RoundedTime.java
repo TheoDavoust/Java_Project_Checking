@@ -10,7 +10,7 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	
 	public RoundedTime() {
 		LocalTime time = LocalTime.now();
-		LocalTime rounded = time.truncatedTo(ChronoUnit.HOURS).plusMinutes(15 * (int)Math.ceil(time.getMinute() / 15.0));
+		LocalTime rounded = time.truncatedTo(ChronoUnit.HOURS).plusMinutes(15 * (int)Math.round(time.getMinute() / 15.0));
 		
 		hours = rounded.getHour();
 		minutes = rounded.getMinute();
@@ -35,8 +35,6 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	@Override
 	public boolean equals(Object o) {
 		RoundedTime arg = (RoundedTime)o;
-		if(hours == arg.hours && minutes == arg.minutes)
-			return true;
-		return false;
+		return hours == arg.hours && minutes == arg.minutes;
 	}
 }

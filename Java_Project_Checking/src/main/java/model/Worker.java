@@ -6,6 +6,10 @@ public class Worker implements Serializable{
 	private int id;
 	private String name;
 	
+	public Worker(int id) {
+		this(id, null);
+	}
+	
 	public Worker(int id, String name) {
 		this.id = id;
 		this.name = name;
@@ -25,5 +29,11 @@ public class Worker implements Serializable{
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Worker w = (Worker)o;
+		return id == w.id && name == w.name;
 	}
 }

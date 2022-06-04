@@ -20,7 +20,7 @@ public class FeedBackLabel extends JTextArea{
 		this.setEditable(false);
 		this.setFocusable(false);
 	    
-		this.timer = new Timer(3000, new ActionListener() {	
+		this.timer = new Timer(5000, new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setText("");
@@ -30,13 +30,19 @@ public class FeedBackLabel extends JTextArea{
 	}
 	
 	public void success(String str) {
-		setForeground(new Color(0, 255, 0));
+		setForeground(new Color(51, 204, 51));
 		setText(str);
 		startClearTimer();
 	}
 	
 	public void error(String str) {
-		setForeground(new Color(255, 0, 0));
+		setForeground(new Color(255, 26, 26));
+		setText(str);
+		startClearTimer();
+	}
+	
+	public void info(String str) {
+		setForeground(new Color(0, 128, 255));
 		setText(str);
 		startClearTimer();
 	}

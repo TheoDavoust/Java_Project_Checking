@@ -3,8 +3,8 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,7 +12,7 @@ import javax.swing.Timer;
 
 import controller.EmulatorTimerChekcing;
 import controller.EmulatorTimerClock;
-import model.IdTimeChecking;
+import model.Checking;
 
 public class EmulatorWindow extends JFrame{
 	private JPanel border_container;
@@ -25,12 +25,12 @@ public class EmulatorWindow extends JFrame{
 	
 	private Timer timer;
 	
-	private Set<IdTimeChecking> stack;
+	private Queue<Checking> queue;
 	
 	public EmulatorWindow() {
 		super();
 		
-		this.stack = new TreeSet<>();
+		this.queue = new LinkedList<>();
 
 		this.border_container = new JPanel();
 		this.input_container = new JPanel();
@@ -38,7 +38,7 @@ public class EmulatorWindow extends JFrame{
 		this.text_input = new TextInput();
 		this.current_time = new SimpleLabel();
 		this.feedback_output = new FeedBackLabel();
-		this.button_input = new ButtonInput(feedback_output, text_input, stack);
+		this.button_input = new ButtonInput(feedback_output, text_input, queue);
 		
 		this.timer = new Timer(1000, null);
 		timer.start();
@@ -68,7 +68,7 @@ public class EmulatorWindow extends JFrame{
 		/** Add timer methods **/
 		timer.addActionListener(new EmulatorTimerClock(current_time));
 		timer.getActionListeners()[0].actionPerformed(null);
-		timer.addActionListener(new EmulatorTimerChekcing(text_input, feedback_output));
+		timer.addActionListener(new EmulatorTimerChekcing(text_input, feedback_output, queue));
 		
 		timer.restart();
 	}

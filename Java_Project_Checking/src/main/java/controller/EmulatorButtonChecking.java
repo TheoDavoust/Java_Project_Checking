@@ -1,30 +1,32 @@
 
 package controller;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.Set;
+import java.util.Collection;
 
 import javax.swing.JTextField;
 
-import model.IdTimeChecking;
+import model.Checking;
+import model.Worker;
 import view.FeedBackLabel;
 
 public class EmulatorButtonChecking implements ActionListener{
 
 	private FeedBackLabel feedback_output;
 	private JTextField field;
-	private Set<IdTimeChecking> stack;
+	private Collection<Checking> queue;
 	
 	public EmulatorButtonChecking(
 			FeedBackLabel error_output,
 			JTextField field,
-			Set<IdTimeChecking> stack) {
+			Collection<Checking> queue) {
 		super();
 		this.feedback_output = error_output;
 		this.field = field;
-		this.stack = stack;
+		this.queue = queue;
 	}
 	
 	public void displayError(String str) {
@@ -38,13 +40,14 @@ public class EmulatorButtonChecking implements ActionListener{
 			if(text.isBlank())
 				throw new IOException("Le champ de texte est vide.");
 			
-			if(!stack.add(new IdTimeChecking(Integer.parseInt(text))))
+			Checking check = new Checking(new Worker(Integer.parseInt(text)));
+			if(queue.contains(check))
 				throw new IOException("Vous avez déjà pointé pour cette heure.");
 			
-			//TODO Appel de la routine d'envoie
+			queue.add(check);
 			
 			//Message de feedback
-			feedback_output.success("Vous avez pointé.");
+			feedback_output.info("Pointage pris en compte.");
 			
 		}catch(Exception exc){
 			displayError(exc.getMessage());
