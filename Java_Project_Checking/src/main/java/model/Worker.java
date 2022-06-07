@@ -1,14 +1,14 @@
 package model;
 
-import java.io.IOException;
-import java.io.ObjectInputStream.GetField;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 public class Worker implements Serializable{
 	private int id;
 	private String name;
+	
+	public Worker(int id) {
+		this(id, null);
+	}
 	
 	public Worker(int id, String name) {
 		this.id = id;
@@ -29,5 +29,11 @@ public class Worker implements Serializable{
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Worker w = (Worker)o;
+		return id == w.id && name == w.name;
 	}
 }

@@ -2,17 +2,19 @@ package model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.io.ObjectInputStream.GetField;
 
-public class Checking implements Serializable{
+public class Checking implements Serializable, Comparable<Checking>{
 	private Worker worker;
 	private RoundedTime time;
 	private LocalDate date;
 	
-	// Seul constructeur necessaire pour la creation d'un checking qui va etre traite plus tard par l'appli
 	public Checking(Worker worker) {
-		time = new RoundedTime();
+		this(worker, new RoundedTime());
+	}
+	
+	public Checking(Worker worker, RoundedTime time) {
 		this.worker = worker;
+		this.time = time;
 		this.date = LocalDate.now();
 	}
 
@@ -38,5 +40,19 @@ public class Checking implements Serializable{
 
 	public void setDate(LocalDate date) {
 		this.date = date;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Checking c = (Checking)o;
+		return date.equals(c.date) && time.equals(c.time) && worker.equals(c.worker);
+	}
+
+	@Override
+	public int compareTo(Checking o) {
+		Checking c = (Checking)o;
+		return (date.compareTo(o.date) * 100) +
+				(time.compareTo(o.time) * 10) + 
+				Integer.compare(worker.getId(), o.worker.getId());
 	}
 }
