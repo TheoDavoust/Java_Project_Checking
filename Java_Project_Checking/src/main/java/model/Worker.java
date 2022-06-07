@@ -1,16 +1,21 @@
 package model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class Worker implements Serializable{
-	private int id;
+	private UUID id;
 	private String name;
 	
-	public Worker(int id) {
+	public Worker() {
+		this(UUID.randomUUID());
+	}
+	
+	public Worker(UUID id) {
 		this(id, null);
 	}
 	
-	public Worker(int id, String name) {
+	public Worker(UUID id, String name) {
 		this.id = id;
 		this.name = name;
 	}
@@ -23,12 +28,22 @@ public class Worker implements Serializable{
 		this.name = name;
 	}
 
-	public int getId() {
+	public UUID getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(UUID id) {
 		this.id = id;
+	}
+	
+	@Override
+	public int hashCode() {
+		return id.hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return name;
 	}
 	
 	@Override

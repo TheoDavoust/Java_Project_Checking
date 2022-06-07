@@ -15,13 +15,11 @@ import view.FeedBackLabel;
 public class EmulatorTimerChekcing implements ActionListener{
 	
 	private Queue<Checking> queue;
-	private JTextField field;
 	private FeedBackLabel feedback_text;
 	private SocketClient socket;
 	
-	public EmulatorTimerChekcing(JTextField field, FeedBackLabel feedback_text, Queue<Checking> queue){
+	public EmulatorTimerChekcing(FeedBackLabel feedback_text, Queue<Checking> queue){
 		super();
-		this.field = field;
 		this.feedback_text = feedback_text;
 		this.queue = queue;
 	}
@@ -30,15 +28,15 @@ public class EmulatorTimerChekcing implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		try {
 			if(!queue.isEmpty()) {
-				socket = new SocketClient();
+				socket = new SocketClient("127.0.0.1", 8090);
 				while(!queue.isEmpty())
 				{
 					socket.sendObject(queue.peek());
 					
-					Worker w = (Worker)socket.receiveObject();
+					Worker w = (Worker)socket.readObject();
 					if(w != null) {
 						feedback_text.success(String.format("Bonjour %s.", w.getName()));
-						if((Boolean)socket.receiveObject())
+						if((Boolean)socket.readObject())
 							feedback_text.error("Vous avez déjà pointé.");						
 					}
 					else

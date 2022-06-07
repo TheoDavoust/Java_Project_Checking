@@ -22,7 +22,7 @@ public class Main {
 		f.setLayout(null);
 		f.setVisible(true);
 		
-		Worker worker = new Worker(0, "work_guy");
+		Worker worker = new Worker();
 		Storage storage = new Storage();
 		
 		storage.getCheckings().add(new Checking(worker));
