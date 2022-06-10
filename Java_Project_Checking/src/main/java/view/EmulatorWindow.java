@@ -56,8 +56,9 @@ public class EmulatorWindow extends JFrame{
 	}
 	
 	public void init() {
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setMinimumSize(new Dimension(480, 480));
+		setTitle("Emulateur de pointeuse");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setMinimumSize(new Dimension(480, 480));
 		
 		border_container.setLayout(new BorderLayout(50, 50));
 		input_container.setLayout(new GridLayout());
