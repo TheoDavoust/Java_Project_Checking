@@ -2,18 +2,20 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.util.UUID;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.Timer;
 
+import controller.ServerThreadChecking;
+import controller.ServerThreadUpdate;
 import model.Storage;
-import model.Worker;
 
 public class MainWindow extends JFrame{
-	private JPanel border_container;
-	private TabWorker tab_worker;
 	
 	private FeedBackLabel feedback;
 	private JTabbedPane onglet;
@@ -25,29 +27,46 @@ public class MainWindow extends JFrame{
 		
 		this.storage = new Storage();
 		
-		this.border_container = new JPanel();
 		this.feedback = new FeedBackLabel();
 		this.onglet = new JTabbedPane();
 		
-		this.storage.getWorkers().add(new Worker(UUID.randomUUID(), "Jean Bon"));
-		this.storage.getWorkers().add(new Worker(UUID.randomUUID(), "Alex Ception"));
-		this.storage.getWorkers().add(new Worker(UUID.randomUUID(), "Théodore An"));
+		/* Setting storage file */
+		try {			
+			this.storage.load();
+		}catch(Exception e) {
+			feedback.error(e.getMessage());
+		}
+		
+		new Timer(15000, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				storage.save();
+			}
+		}).start();
+		
+		/* Starting Socket Threads */
+		new Thread(new ServerThreadUpdate(feedback, storage)).start();
+		new Thread(new ServerThreadChecking(feedback, storage)).start();
 		
 		init();
 	}
 	
 	public void init() {
 		setTitle("Fénêtre principale");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				storage.save();
+				setDefaultCloseOperation(EXIT_ON_CLOSE);
+			}
+		});
 		setMinimumSize(new Dimension(480, 480));
 		
-		border_container.setLayout(new BorderLayout(50, 50));
-		border_container.add(feedback, BorderLayout.NORTH);
-		border_container.add(onglet, BorderLayout.CENTER);
+		getContentPane().add(feedback, BorderLayout.NORTH);
+		getContentPane().add(onglet, BorderLayout.CENTER);
 		
 		onglet.add("Employés", new TabWorker(storage));
 		onglet.add("Planning", new TabTimeTable());
-		
-		add(border_container);
 	}
 }

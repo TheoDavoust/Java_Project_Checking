@@ -3,9 +3,9 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.ArrayList;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 import javax.swing.JComboBox;
@@ -15,9 +15,8 @@ import javax.swing.Timer;
 
 import controller.EmulatorTimerChekcing;
 import controller.EmulatorTimerClock;
-import controller.EmulatorThreadSocket;
+import controller.EmulatorTimerUpdate;
 import model.Checking;
-import model.SocketClient;
 import model.Worker;
 
 public class EmulatorWindow extends JFrame{
@@ -50,14 +49,12 @@ public class EmulatorWindow extends JFrame{
 		this.timer = new Timer(1000, null);
 		timer.start();
 		
-		new Thread(new EmulatorThreadSocket(dropdown, feedback_output)).start();
-		
 		init();
 	}
 	
 	public void init() {
 		setTitle("Emulateur de pointeuse");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
 		setMinimumSize(new Dimension(480, 480));
 		
 		border_container.setLayout(new BorderLayout(50, 50));
@@ -79,6 +76,7 @@ public class EmulatorWindow extends JFrame{
 		timer.addActionListener(new EmulatorTimerClock(current_time));
 		timer.getActionListeners()[0].actionPerformed(null);
 		timer.addActionListener(new EmulatorTimerChekcing(feedback_output, queue));
+		timer.addActionListener(new EmulatorTimerUpdate(dropdown, feedback_output));
 		
 		timer.restart();
 	}

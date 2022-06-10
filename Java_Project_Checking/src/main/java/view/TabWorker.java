@@ -1,16 +1,13 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.ScrollPaneLayout;
-import javax.swing.border.Border;
-import javax.swing.table.AbstractTableModel;
 
 import controller.TableModelWorker;
 import model.Storage;
@@ -20,6 +17,7 @@ public class TabWorker extends JPanel{
 	
 	private JButton button_delete;
 	private JButton button_add;
+	private JButton button_modifier;
 	private JTable table;
 	
 	private JPanel bottom_container;
@@ -29,10 +27,14 @@ public class TabWorker extends JPanel{
 		this.storage = storage;
 		setLayout(new BorderLayout(50, 50));
 		
-		this.button_add = new JButton("Ajouter");
-		this.button_delete = new JButton("Supprimer");
 		
-		this.table = new JTable(new TableModelWorker(storage.getWorkers()));
+		this.table = new JTable();
+		TableModelWorker table_model = new TableModelWorker(storage.getWorkers(), table);
+		this.table.setModel(table_model);
+		
+		this.button_add = new JButton(table_model.new addAction());
+		this.button_modifier = new JButton(table_model.new modifierAction());
+		this.button_delete = new JButton(table_model.new deleteAction());
 		
 		this.bottom_container = new JPanel();
 		this.center_container = new JPanel();
@@ -43,7 +45,9 @@ public class TabWorker extends JPanel{
 	public void init() {
 		bottom_container.setLayout(new GridLayout());
 		bottom_container.add(button_add);
+		bottom_container.add(button_modifier);
 		bottom_container.add(button_delete);
+		bottom_container.setPreferredSize(new Dimension(getPreferredSize().width, 60));
 		
 		center_container.setLayout(new GridLayout());
 		JScrollPane scroll = new JScrollPane(table);

@@ -56,14 +56,14 @@ public class Storage {
 		}
 	}
 	
-	public void load() {
+	public void load() throws Exception {
 		try(FileInputStream file = new FileInputStream(filename);
 				ObjectInputStream ins = new ObjectInputStream(file)){
 			checkings = (List<Checking>)ins.readObject();
 			workers = (List<Worker>)ins.readObject();
 			
 		}catch(IOException | ClassNotFoundException e) {
-			e.printStackTrace();
+			throw e;
 		}
 	}
 	

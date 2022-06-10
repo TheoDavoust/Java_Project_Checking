@@ -1,14 +1,12 @@
 
 package controller;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Collection;
 
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
 
 import model.Checking;
 import model.Worker;

@@ -33,7 +33,7 @@ public class Main {
 		
 		Storage other = new Storage();
 		System.out.println(other);
-		other.load();
+		//other.load();
 		System.out.println(other);
 	}
 }

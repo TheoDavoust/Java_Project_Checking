@@ -15,6 +15,10 @@ public class Worker implements Serializable{
 		this(id, null);
 	}
 	
+	public Worker(String name) {
+		this(UUID.randomUUID(), name);
+	}
+	
 	public Worker(UUID id, String name) {
 		this.id = id;
 		this.name = name;
@@ -38,7 +42,7 @@ public class Worker implements Serializable{
 	
 	@Override
 	public int hashCode() {
-		return id.hashCode();
+		return id.hashCode() ^ name.hashCode();
 	}
 	
 	@Override
@@ -49,6 +53,8 @@ public class Worker implements Serializable{
 	@Override
 	public boolean equals(Object o) {
 		Worker w = (Worker)o;
+		if(o == null)
+			return false;
 		return id == w.id && name == w.name;
 	}
 }
