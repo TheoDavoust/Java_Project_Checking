@@ -11,6 +11,7 @@ import java.util.List;
 public class Storage {
 	private List<Checking> checkings;
 	private List<Worker> workers;
+	private List<TimeTable> time_table;
 	
 	private static final String filename = "./src/main/resources/storage.dat";
 	
@@ -18,6 +19,7 @@ public class Storage {
 		super();
 		checkings = new ArrayList<Checking>();
 		workers = new ArrayList<Worker>();
+		time_table = new ArrayList<TimeTable>();
 	}
 	
 	public List<Checking> getCheckings() {
@@ -34,6 +36,14 @@ public class Storage {
 
 	public void setWorkers(List<Worker> workers) {
 		this.workers = workers;
+	}
+
+	public List<TimeTable> getTime_table() {
+		return time_table;
+	}
+
+	public void setTime_table(List<TimeTable> time_table) {
+		this.time_table = time_table;
 	}
 
 	public void save() {
