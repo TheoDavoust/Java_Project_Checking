@@ -53,6 +53,6 @@ public class Checking implements Serializable, Comparable<Checking>{
 		Checking c = (Checking)o;
 		return (date.compareTo(o.date) * 100) +
 				(time.compareTo(o.time) * 10) + 
-				Integer.compare(worker.getId(), o.worker.getId());
+				worker.getId().compareTo(o.worker.getId());
 	}
 }

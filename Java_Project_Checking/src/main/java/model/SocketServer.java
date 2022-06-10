@@ -24,6 +24,22 @@ public class SocketServer extends ServerSocket{
 		socket = accept();
 	}
 	
+	public Socket getSocket() {
+		return socket;
+	}
+
+	public void setSocket(Socket socket) {
+		this.socket = socket;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
 	public Object readObject() throws ClassNotFoundException, IOException{
 		if(!socket.isConnected())
 			throw new IOException("Socket is not connected");
