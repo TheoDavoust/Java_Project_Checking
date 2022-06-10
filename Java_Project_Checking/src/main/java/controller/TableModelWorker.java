@@ -8,18 +8,19 @@ import model.Worker;
 
 public class TableModelWorker extends AbstractTableModel{
 
-	private final String[] columns = {"Nom", "UUID"};
 	private List<Worker> workers;
+	private final Object[] columns = {"Nom", "UUID"};
 	
 	public TableModelWorker(List<Worker> workers) {
 		super();
+	    
 		this.workers = workers;
 		fireTableRowsInserted(getRowCount(), getColumnCount());
 	}
 	
 	@Override
 	public String getColumnName(int columnIndex) {
-		return columns[columnIndex];
+		return (String) columns[columnIndex];
 	}
 	
 	@Override

@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ScrollPaneLayout;
+import javax.swing.border.Border;
 import javax.swing.table.AbstractTableModel;
 
 import controller.TableModelWorker;
@@ -22,7 +23,7 @@ public class TabWorker extends JPanel{
 	private JTable table;
 	
 	private JPanel bottom_container;
-	private JScrollPane center_container;
+	private JPanel center_container;
 	
 	public TabWorker(Storage storage) {
 		this.storage = storage;
@@ -31,11 +32,10 @@ public class TabWorker extends JPanel{
 		this.button_add = new JButton("Ajouter");
 		this.button_delete = new JButton("Supprimer");
 		
-		this.table = new JTable();
-		table.setModel(new TableModelWorker(storage.getWorkers()));
+		this.table = new JTable(new TableModelWorker(storage.getWorkers()));
 		
 		this.bottom_container = new JPanel();
-		this.center_container = new JScrollPane();
+		this.center_container = new JPanel();
 		
 		init();
 	}
@@ -45,12 +45,12 @@ public class TabWorker extends JPanel{
 		bottom_container.add(button_add);
 		bottom_container.add(button_delete);
 		
-		center_container.setLayout(new ScrollPaneLayout());
-		center_container.add(table);
+		center_container.setLayout(new GridLayout());
+		JScrollPane scroll = new JScrollPane(table);
+		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		center_container.add(scroll);
 		
 		add(center_container, BorderLayout.CENTER);
 		add(bottom_container, BorderLayout.SOUTH);
-		
-		System.out.println(table.getValueAt(0, 0));
 	}
 }
