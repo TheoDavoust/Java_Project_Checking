@@ -47,6 +47,7 @@ public class MainWindow extends JFrame{
 		
 		onglet.add("Employés", new TabWorker(storage));
 		onglet.add("Planning", new TabTimeTable());
+		onglet.add("Historique des checks", new TabCheckingHistory(storage));
 		
 		add(border_container);
 	}
