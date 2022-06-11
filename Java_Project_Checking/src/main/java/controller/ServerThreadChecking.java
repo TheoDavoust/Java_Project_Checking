@@ -1,27 +1,23 @@
 package controller;
 
 import model.Checking;
+import model.ServerThread;
 import model.SocketServer;
 import model.Storage;
 import model.Worker;
 import view.FeedBackLabel;
 
-public class ServerThreadChecking implements Runnable{
+public class ServerThreadChecking extends ServerThread{
 	
-	private Storage storage;
-	private FeedBackLabel feedback;
-	private int port;
-	
-	public ServerThreadChecking(FeedBackLabel feedback, Storage storage) {
-		this.storage = storage;
-		this.feedback = feedback;
-		this.port = 8090;
+	public ServerThreadChecking(FeedBackLabel feedback, Storage storage, int port) {
+		super(feedback, storage, port);
 	}
-	
+
 	@Override
 	public void run() {
-		try (SocketServer server = new SocketServer(port)) {
-			while(true) {
+		try {
+			while(!isInterrupted()) {
+				server = new SocketServer(port);
 				server.setConnection();
 				Checking check = (Checking)server.readObject();
 				
@@ -41,6 +37,7 @@ public class ServerThreadChecking implements Runnable{
 				server.closeSocket();
 			}
 		} catch (Exception e){
+			e.printStackTrace();
 			feedback.error(e.getMessage());
 		}
 	}

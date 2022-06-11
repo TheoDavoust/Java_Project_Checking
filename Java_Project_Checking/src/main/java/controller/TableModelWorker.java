@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.util.List;
 
 import javax.swing.AbstractAction;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
@@ -79,7 +80,7 @@ public class TableModelWorker extends AbstractTableModel{
 				"Nom de l'employé à ajouter : "
 			);
 			
-			if(name != null){
+			if(!name.isBlank()){
 				workers.add(new Worker(name));
 				fireTableRowsInserted(getRowCount(), getColumnCount());
 			}
@@ -94,12 +95,16 @@ public class TableModelWorker extends AbstractTableModel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int row = table.getSelectedRow();
+			if(row == -1)
+				return;
+			
 			Worker worker = workers.get(row);
 			String new_name = JOptionPane.showInputDialog(
 				String.format("Veuillez saisir le nouveau nom pour %s", worker.getName()),
 				worker.getName()
 			);
-			if(new_name != null) {
+			
+			if(!new_name.isBlank()) {
 				worker.setName(new_name);
 				fireTableRowsUpdated(row, row);
 			}

@@ -14,7 +14,6 @@ public class SocketClient extends Socket{
 	
 	public SocketClient(String addr, int port) throws IOException {
 		super(addr, port);
-		this.addr = addr;
 	}
 	
 	public void sendObject(Object o) throws IOException {

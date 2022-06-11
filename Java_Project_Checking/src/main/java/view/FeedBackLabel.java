@@ -29,19 +29,19 @@ public class FeedBackLabel extends JTextArea{
 		timer.setRepeats(false);
 	}
 	
-	public void success(String str) {
+	public synchronized void success(String str) {
 		setForeground(new Color(51, 204, 51));
 		setText(str);
 		startClearTimer();
 	}
 	
-	public void error(String str) {
+	public synchronized void error(String str) {
 		setForeground(new Color(255, 26, 26));
 		setText(str);
 		startClearTimer();
 	}
 	
-	public void info(String str) {
+	public synchronized void info(String str) {
 		setForeground(new Color(0, 128, 255));
 		setText(str);
 		startClearTimer();

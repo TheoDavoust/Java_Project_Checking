@@ -9,4 +9,9 @@ public class SimpleLabel extends JLabel{
 		this.setHorizontalAlignment(JLabel.CENTER);
 		this.setFont(new Font("Arial", Font.PLAIN, 72));
 	}
+	
+	public SimpleLabel(String s) {
+		this();
+		setText(s);
+	}
 }

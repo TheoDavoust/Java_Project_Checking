@@ -1,31 +1,31 @@
 package controller;
 
+import model.ServerThread;
 import model.SocketServer;
 import model.Storage;
 import view.FeedBackLabel;
 
-public class ServerThreadUpdate implements Runnable{
-	private FeedBackLabel feedback;
-	private Storage storage;
-	private int port;
-	
-	public ServerThreadUpdate(FeedBackLabel feedback, Storage storage) {
-		this.feedback = feedback;
-		this.storage = storage;
-		this.port = 8081;
+public class ServerThreadUpdate extends ServerThread{
+
+	public ServerThreadUpdate(FeedBackLabel feedback, Storage storage, int port) {
+		super(feedback, storage, port);
 	}
 
 	@Override
 	public void run() {
-		try (SocketServer serv = new SocketServer(port)) {
-			while(true){
-				serv.setConnection();
-				serv.sendObject(storage.getWorkers().hashCode());
-				if(!(Boolean)serv.readObject()) {
-					serv.sendObject(storage.getWorkers());
+		try{
+			System.out.println("Running");
+			while(!Thread.currentThread().isInterrupted()){
+				server = new SocketServer(port);
+				server.setConnection();
+				server.sendObject(storage.getWorkers().hashCode());
+				if(!(Boolean)server.readObject()) {
+					server.sendObject(storage.getWorkers());
 				}
+				server.closeSocket();
 			}
 		}catch(Exception e) {
+			e.printStackTrace();
 			feedback.error(e.getMessage());
 		}
 	}
