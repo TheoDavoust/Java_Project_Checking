@@ -14,9 +14,8 @@ public class ServerThreadUpdate extends ServerThread{
 	@Override
 	public void run() {
 		try{
-			System.out.println("Running");
+			server = new SocketServer(port);
 			while(!Thread.currentThread().isInterrupted()){
-				server = new SocketServer(port);
 				server.setConnection();
 				server.sendObject(storage.getWorkers().hashCode());
 				if(!(Boolean)server.readObject()) {

@@ -16,8 +16,8 @@ public class ServerThreadChecking extends ServerThread{
 	@Override
 	public void run() {
 		try {
+			server = new SocketServer(port);
 			while(!isInterrupted()) {
-				server = new SocketServer(port);
 				server.setConnection();
 				Checking check = (Checking)server.readObject();
 				
