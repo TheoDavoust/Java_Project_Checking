@@ -1,18 +1,23 @@
 package view.server;
 
-import javax.swing.JButton;
+import java.awt.BorderLayout;
+
 import javax.swing.JPanel;
 
+import model.Storage;
+
 public class TabTimeTable extends JPanel{
-	private JButton button;
 	
+	private Storage storage;
+
 	public TabTimeTable() {
 		super();
-		
-		this.button = new JButton("button");
+		setLayout(new BorderLayout());
+			
+		init();
 	}
 	
 	public void init() {		
-		add(button);
+		//add(new TableModelTimeTable(, null))
 	}
 }

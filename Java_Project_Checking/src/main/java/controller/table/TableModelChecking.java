@@ -10,7 +10,7 @@ import model.Checking;
 public class TableModelChecking extends AbstractTableModel{
 
 	private List<Checking> checkings;
-	private final Object[] columns = {"Nom", "Heure approximative","Date"};
+	private final Object[] columns = {"Nom", "Heure approximative", "Date"};
 	
 	public TableModelChecking(List<Checking> checkings) {
 		super();
