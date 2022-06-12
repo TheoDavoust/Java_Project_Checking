@@ -13,7 +13,9 @@ import model.Worker;
 import view.util.FeedBackLabel;
 
 /**
- * @author ThÈo et Amaury
+ * Routine permettant de mettre √† jour les employ√©s de la pointeuse
+ * 
+ * @author Th√©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class EmulatorTimerUpdate extends TimerSocket {
@@ -22,10 +24,10 @@ public class EmulatorTimerUpdate extends TimerSocket {
 	private Vector<Worker> workers;
 
 	/**
-	 * Constuit un EmulatorTimerUpdat ‡ partir d''une JComboBox de Worker et d'un FeedBackLabel
+	 * Constuit un EmulatorTimerUpdat √† partir d'une JComboBox de Worker et d'un FeedBackLabel
 	 * 
-	 * @param dropdown une JComboBox de Worker donnÈe
-	 * @param feedback un FeedBackLabel donnÈ
+	 * @param dropdown une JComboBox de Worker donn√©e
+	 * @param feedback un FeedBackLabel donn√©
 	 */
 	public EmulatorTimerUpdate(JComboBox<Worker> dropdown, FeedBackLabel feedback) {
 		super("127.0.0.1", 8081, feedback);
@@ -35,7 +37,7 @@ public class EmulatorTimerUpdate extends TimerSocket {
 	}
 
 	/**
-	 * Permet de mettre ‡ jour les employÈs de la pointeuse
+	 * Permet de mettre √† jour les employ√©s de la pointeuse
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

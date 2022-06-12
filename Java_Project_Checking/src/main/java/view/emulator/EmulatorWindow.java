@@ -24,9 +24,9 @@ import model.Worker;
 import view.util.FeedBackLabel;
 
 /**
- * Un type de fenêtre
+ * Un type de fenÃªtre
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class EmulatorWindow extends JFrame{
@@ -47,7 +47,7 @@ public class EmulatorWindow extends JFrame{
 	private Queue<Checking> queue;
 	
 	/**
-	 * Construit par défaut un EmulatorWindow puis l'initialise
+	 * Construit par dÃ©faut un EmulatorWindow puis l'initialise
 	 */
 	public EmulatorWindow() {
 		super();

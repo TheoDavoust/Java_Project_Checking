@@ -8,24 +8,24 @@ import model.Worker;
 import view.util.FeedBackLabel;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class ServerThreadChecking extends ServerThread{
 	
 	/**
-	 * Construit un ServerThreadChecking à partir d'un FeedBackLabel, d'un Storage et d'un port donnés
+	 * Construit un ServerThreadChecking Ã  partir d'un FeedBackLabel, d'un Storage et d'un port donnÃ©s
 	 * 
-	 * @param feedback un FeedBackLabel donné
-	 * @param storage un Storage donné
-	 * @param port un port donné
+	 * @param feedback un FeedBackLabel donnÃ©
+	 * @param storage un Storage donnÃ©
+	 * @param port un port donnÃ©
 	 */
 	public ServerThreadChecking(FeedBackLabel feedback, Storage storage, int port) {
 		super(feedback, storage, port);
 	}
 
 	/**
-	 * Permet de recevoir un Checking à tout instant quand l'application est lancée, de vérifier l'intégrité du Checking
+	 * Permet de recevoir un Checking Ã  tout instant quand l'application est lancÃ©e, de vÃ©rifier l'intÃ©gritÃ© du Checking
 	 * puis le stock si tout est bon
 	 */
 	@Override

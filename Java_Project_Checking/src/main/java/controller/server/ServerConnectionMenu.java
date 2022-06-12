@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury, et Louis
  * @version 12/06/2022
  */
 public class ServerConnectionMenu extends AbstractAction {
@@ -19,10 +19,10 @@ public class ServerConnectionMenu extends AbstractAction {
 	private ServerThreadUpdate thread_update;
 
 	/**
-	 * Construit un ServerConnectionMenu à partir d'un ServerThreadChecking et d'un ServerThreadUpdate donnés
+	 * Construit un ServerConnectionMenu Ã  partir d'un ServerThreadChecking et d'un ServerThreadUpdate donnÃ©s
 	 * 
-	 * @param thread_checking un ServerThreadChecking donné
-	 * @param thread_update un ServerThreadUpdate donné
+	 * @param thread_checking un ServerThreadChecking donnÃ©
+	 * @param thread_update un ServerThreadUpdate donnÃ©
 	 */
 	public ServerConnectionMenu(ServerThreadChecking thread_checking, ServerThreadUpdate thread_update) {
 		super("Connexion");
@@ -31,7 +31,7 @@ public class ServerConnectionMenu extends AbstractAction {
 	}
 
 	/**
-	 * Ouvre une boite de dialogue quand le bouton connexion est appuyé qui permet de changer le port de mis à jour, le port de pointage
+	 * Ouvre une boite de dialogue quand le bouton connexion est appuyÃ© qui permet de changer le port de mise Ã  jour, le port de pointage
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

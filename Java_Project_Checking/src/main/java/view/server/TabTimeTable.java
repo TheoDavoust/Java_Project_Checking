@@ -19,9 +19,9 @@ import model.Worker;
 import view.util.FeedBackLabel;
 
 /**
- * Réprésente l'onglet "Planning"
+ * ReprÃ©sente l'onglet "Planning"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TabTimeTable extends JPanel{
@@ -39,7 +39,10 @@ public class TabTimeTable extends JPanel{
 	private List<JButton> buttons;
 
 	/**
+	 * Contructeur
 	 * 
+	 * @param storage
+	 * @param feedback
 	 */
 	public TabTimeTable(Storage storage, FeedBackLabel feedback) {
 		super();
@@ -59,7 +62,7 @@ public class TabTimeTable extends JPanel{
 	}
 	
 	/**
-	 * 
+	 * 	MÃ©thode d'initialisation
 	 */
 	public void init() {
 		

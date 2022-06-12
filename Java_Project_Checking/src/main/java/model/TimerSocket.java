@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import view.util.FeedBackLabel;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public abstract class TimerSocket implements ActionListener{
@@ -15,11 +15,11 @@ public abstract class TimerSocket implements ActionListener{
 	protected int port;
 	
 	/**
-	 * Construit un TimerSocket à partir d'une adresse IP addr, d'un port et d'un FeedBackLabel
+	 * Construit un TimerSocket Ã  partir d'une adresse IP addr, d'un port et d'un FeedBackLabel
 	 * 
-	 * @param addr une adresse IP donnée
-	 * @param port un port donné
-	 * @param feedback un FeedBackLabel donné
+	 * @param addr une adresse IP donnÃ©e
+	 * @param port un port donnÃ©
+	 * @param feedback un FeedBackLabel donnÃ©
 	 */
 	public TimerSocket(String addr, int port, FeedBackLabel feedback) {
 		this.addr = addr;
@@ -30,16 +30,16 @@ public abstract class TimerSocket implements ActionListener{
 	/**
 	 * Retourne l'adresse IP du TimerSocket
 	 * 
-	 * @return Le paramètre addr du TimerSocket
+	 * @return Le paramÃ¨tre addr du TimerSocket
 	 */
 	public String getAddr() {
 		return addr;
 	}
 
 	/**
-	 * Remplace l'adresse IP du TimerSocket par une nouvelle adresse IP donnée
+	 * Remplace l'adresse IP du TimerSocket par une nouvelle adresse IP donnÃ©e
 	 * 
-	 * @param addr une adresse IP donnée
+	 * @param addr une adresse IP donnÃ©e
 	 */
 	public void setAddr(String addr) {
 		this.addr = addr;
@@ -48,16 +48,16 @@ public abstract class TimerSocket implements ActionListener{
 	/**
 	 * Retourne le port du TimerSocket
 	 * 
-	 * @return Le paramètre port du TimerSocket
+	 * @return Le paramÃ¨tre port du TimerSocket
 	 */
 	public int getPort() {
 		return port;
 	}
 
 	/**
-	 * Remplace le port du TimerSocket par un nouveau port donné
+	 * Remplace le port du TimerSocket par un nouveau port donnÃ©
 	 * 
-	 * @param port un port donné
+	 * @param port un port donnÃ©
 	 */
 	public void setPort(int port) {
 		this.port = port;

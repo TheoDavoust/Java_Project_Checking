@@ -12,9 +12,9 @@ import controller.table.TableModelChecking;
 import model.Storage;
 
 /**
- * Représente l'onglet "Historique des pointages"
+ * ReprÃ©sente l'onglet "Historique des pointages"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TabCheckingHistory extends JPanel{
@@ -29,9 +29,9 @@ public class TabCheckingHistory extends JPanel{
 	private JTable table;
 	
 	/**
-	 * Construit un TabCheckingHistory à partir d'un Storage, puis l'initialise
+	 * Construit un TabCheckingHistory Ã  partir d'un Storage, puis l'initialise
 	 * 
-	 * @param storage un Storage donné
+	 * @param storage un Storage donnÃ©
 	 */
 	public TabCheckingHistory(Storage storage) {
 		this.storage = storage;

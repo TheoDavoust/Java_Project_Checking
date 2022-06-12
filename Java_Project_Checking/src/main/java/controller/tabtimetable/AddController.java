@@ -17,12 +17,25 @@ import model.Storage;
 import model.TimeTable;
 import model.Worker;
 
+/**
+ * Contrôle les buttons de la page planning
+ * 
+ * @author Théo, Amaury et Louis
+ * @version 12/06/2022
+ */
 public class AddController extends AbstractAction{
 
 	private JComboBox<Worker> workers;
 	private DayOfWeek day;
 	private Storage storage;
 	
+	/**
+	 * Constructeur
+	 * 
+	 * @param workers
+	 * @param day
+	 * @param storage
+	 */
 	public AddController(JComboBox<Worker> workers, DayOfWeek day, Storage storage) {
 		super("Modifier");
 		this.workers = workers;
@@ -30,6 +43,9 @@ public class AddController extends AbstractAction{
 		this.storage = storage;
 	}
 	
+	/**
+	 * Ajoute ou modifie une horaire dans l'emploi du temps
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(workers.getSelectedIndex() == -1)

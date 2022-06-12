@@ -24,9 +24,9 @@ import model.Storage;
 import view.util.FeedBackLabel;
 
 /**
- * Représente la fenêtre principale du server
+ * ReprÃ©sente la fenÃªtre principale du server
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class MainWindow extends JFrame{
@@ -42,7 +42,7 @@ public class MainWindow extends JFrame{
 	private ServerThreadUpdate thread_update;
 	
 	/**
-	 * Construit une MainWindow par défaut puis l'initialise
+	 * Construit une MainWindow par dÃ©faut puis l'initialise
 	 */
 	public MainWindow() {
 		super();

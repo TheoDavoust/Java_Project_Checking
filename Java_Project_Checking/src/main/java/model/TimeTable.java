@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Représente un emploi du temps d'un Worker
+ * ReprÃ©sente un emploi du temps d'un Worker
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TimeTable implements Serializable{
@@ -16,9 +16,9 @@ public class TimeTable implements Serializable{
 	private Map<DayOfWeek, RoundedTime[]> schedule;
 	
 	/**
-	 * Construit l'emploi du temps d'un worker à partir d'un DayOfWeek et d'un RoundedTime
+	 * Construit l'emploi du temps d'un worker Ã  partir d'un DayOfWeek et d'un RoundedTime
 	 * 
-	 * @param worker un Worker donné
+	 * @param worker un Worker donnÃ©
 	 */
 	public TimeTable(Worker worker) {
 		super();
@@ -32,7 +32,7 @@ public class TimeTable implements Serializable{
 	/**
 	 * Retourne l'emploi du temps du TimeTable
 	 * 
-	 * @return Le paramètre schedule du TimeTable
+	 * @return Le paramÃ¨tre schedule du TimeTable
 	 */
 	public Map<DayOfWeek, RoundedTime[]> getSchedule() {
 		return schedule;
@@ -40,16 +40,16 @@ public class TimeTable implements Serializable{
 
 	/**
 	 * Remplace l'emploi du temps du TimeTable par un nouvel emploi du temps
-	 * @param schedule un emploi du temps donné
+	 * @param schedule un emploi du temps donnÃ©
 	 */
 	public void setSchedule(Map<DayOfWeek, RoundedTime[]> schedule) {
 		this.schedule = schedule;
 	}
 
 	/**
-	 * Retourne le Worker à qui appartient ce TimeTable
+	 * Retourne le Worker Ã  qui appartient ce TimeTable
 	 * 
-	 * @return le paramètre worker du TimeTable
+	 * @return le paramÃ¨tre worker du TimeTable
 	 */
 	public Worker getWorker() {
 		return worker;
@@ -58,7 +58,7 @@ public class TimeTable implements Serializable{
 	/**
 	 * Remplace le Worker du TimeTable par un nouveau worker
 	 * 
-	 * @param worker un Worker donné
+	 * @param worker un Worker donnÃ©
 	 */
 	public void setWorker(Worker worker) {
 		this.worker = worker;

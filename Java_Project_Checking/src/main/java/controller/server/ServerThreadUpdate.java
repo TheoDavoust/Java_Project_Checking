@@ -6,24 +6,24 @@ import model.Storage;
 import view.util.FeedBackLabel;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class ServerThreadUpdate extends ServerThread{
 
 	/**
-	 * Construit un ServerThreadUpdate à partir d'un FeddBackLabel, d'un Storage et d'un port donnés
+	 * Construit un ServerThreadUpdate Ã  partir d'un FeddBackLabel, d'un Storage et d'un port donnÃ©s
 	 * 
-	 * @param feedback un FeedBackLabel donné
-	 * @param storage un Storage donné
-	 * @param port un port donné
+	 * @param feedback un FeedBackLabel donnÃ©
+	 * @param storage un Storage donnÃ©
+	 * @param port un port donnÃ©
 	 */
 	public ServerThreadUpdate(FeedBackLabel feedback, Storage storage, int port) {
 		super(feedback, storage, port);
 	}
 
 	/**
-	 * Permet d'envoyer la liste des workers à la pointeuse si changement il y a eu
+	 * Permet d'envoyer la liste des workers Ã  la pointeuse si changement il y a eu
 	 */
 	@Override
 	public void run() {

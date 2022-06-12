@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class SocketServer extends ServerSocket{
@@ -15,7 +15,7 @@ public class SocketServer extends ServerSocket{
 	private int port;
 	
 	/**
-	 * Construit un SocketServer par défaut en lui donnant un port fixé
+	 * Construit un SocketServer par dÃ©faut en lui donnant un port fixÃ©
 	 * @throws IOException Connection introuvable
 	 */
 	public SocketServer() throws IOException{
@@ -23,9 +23,9 @@ public class SocketServer extends ServerSocket{
 	}
 	
 	/**
-	 * Construit un SocketServer à partir d'un port donné
+	 * Construit un SocketServer Ã  partir d'un port donnÃ©
 	 * 
-	 * @param port un port donné
+	 * @param port un port donnÃ©
 	 * @throws IOException Connection introuvable
 	 */
 	public SocketServer(int port) throws IOException{
@@ -34,7 +34,7 @@ public class SocketServer extends ServerSocket{
 	}
 	
 	/**
-	 * Cette méthode accepte une connection et créer un socket temporaire
+	 * Cette mÃ©thode accepte une connection et crÃ©er un socket temporaire
 	 * 
 	 * @throws IOException Connection introuvable
 	 */
@@ -45,16 +45,16 @@ public class SocketServer extends ServerSocket{
 	/**
 	 * Retourne le Socket du SocketServer
 	 * 
-	 * @return le paramètre socket du SocketServer
+	 * @return le paramÃ¨tre socket du SocketServer
 	 */
 	public Socket getSocket() {
 		return socket;
 	}
 
 	/**
-	 * Remplace le Socket du SocketServer par un nouveau Socket donné
+	 * Remplace le Socket du SocketServer par un nouveau Socket donnÃ©
 	 * 
-	 * @param socket un Socket donné
+	 * @param socket un Socket donnÃ©
 	 */
 	public void setSocket(Socket socket) {
 		this.socket = socket;
@@ -63,25 +63,25 @@ public class SocketServer extends ServerSocket{
 	/**
 	 * Retourne le port du SocketServer
 	 * 
-	 * @return Le paramètre port du SockerServer
+	 * @return Le paramÃ¨tre port du SockerServer
 	 */
 	public int getPort() {
 		return port;
 	}
 
 	/**
-	 * Remplace le port du SocketServer par un nouveau port donné
+	 * Remplace le port du SocketServer par un nouveau port donnÃ©
 	 * 
-	 * @param port un port donné
+	 * @param port un port donnÃ©
 	 */
 	public void setPort(int port) {
 		this.port = port;
 	}
 
 	/**
-	 * Cette méthode permet de lire un objet reçu provenant d'un Socket et le retourne
+	 * Cette mÃ©thode permet de lire un objet reÃ§u provenant d'un Socket et le retourne
 	 * 
-	 * @return L'objet in reçu 
+	 * @return L'objet in reÃ§u 
 	 * @throws ClassNotFoundException Classe n'existe pas
 	 * @throws IOException Connection introuvable
 	 */
@@ -94,9 +94,9 @@ public class SocketServer extends ServerSocket{
 	}
 	
 	/**
-	 * Cette méthode permet d'envoyer un objet o à un Socket
+	 * Cette mÃ©thode permet d'envoyer un objet o Ã  un Socket
 	 * 
-	 * @param o l'objet qui doit être envoyé
+	 * @param o l'objet qui doit Ãªtre envoyÃ©
 	 * @throws IOException Connection introuvable
 	 */
 	public void sendObject(Object o) throws IOException{
@@ -110,7 +110,7 @@ public class SocketServer extends ServerSocket{
 	/**
 	 * Ferme le Socket socket
 	 * 
-	 * @throws IOException Problème d'I/O
+	 * @throws IOException ProblÃ¨me d'I/O
 	 */
 	public void closeSocket() throws IOException {
 		socket.close();

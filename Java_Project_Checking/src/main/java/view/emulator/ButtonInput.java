@@ -14,7 +14,7 @@ import view.util.FeedBackLabel;
 /**
  * Un type de bouton
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class ButtonInput extends JButton{
@@ -23,11 +23,11 @@ public class ButtonInput extends JButton{
 	private Collection<Checking> queue;
 	
 	/**
-	 * Construit un ButtonInput à partir d'un FeedBackLabel, d'une JComboBox de Worker et d'une Collection de Checking donnés puis l'initialise
+	 * Construit un ButtonInput Ã  partir d'un FeedBackLabel, d'une JComboBox de Worker et d'une Collection de Checking donnï¿½s puis l'initialise
 	 * 
-	 * @param error_label un FeedBackLabel donné
-	 * @param text_field une JComboBox de Worker donnée
-	 * @param queue une Collection de Checking donnée
+	 * @param error_label un FeedBackLabel donnÃ©
+	 * @param text_field une JComboBox de Worker donnÃ©e
+	 * @param queue une Collection de Checking donnÃ©e
 	 */
 	public ButtonInput(FeedBackLabel error_label, JComboBox<Worker> text_field, Collection<Checking> queue) {
 		super();

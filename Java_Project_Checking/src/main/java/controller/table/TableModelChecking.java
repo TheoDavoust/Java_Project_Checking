@@ -8,9 +8,9 @@ import model.Checking;
 
 
 /**
- * Contrôle l'onglet "Historique des Pointages"
+ * ContrÃ´le la table de l'onglet "Historique des Pointages"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TableModelChecking extends AbstractTableModel{
@@ -19,9 +19,9 @@ public class TableModelChecking extends AbstractTableModel{
 	private final Object[] columns = {"Nom", "Heure approximative", "Date"};
 	
 	/**
-	 * Construit un TableModelChecking à partir d'une List de Checking donnée
+	 * Construit un TableModelChecking Ã  partir d'une List de Checking donnÃ©e
 	 * 
-	 * @param checkings une List de Checking donnée
+	 * @param checkings une List de Checking donnÃ©e
 	 */
 	public TableModelChecking(List<Checking> checkings) {
 		super();
@@ -31,7 +31,7 @@ public class TableModelChecking extends AbstractTableModel{
 	}
 	
 	/**
-	 * Retourne le nom de la colonne à l'index columnindex dans le TableModelChecking
+	 * Retourne le nom de la colonne Ã  l'index columnindex dans le TableModelChecking
 	 * 
 	 * @return Le nom de la colonne
 	 */
@@ -43,7 +43,7 @@ public class TableModelChecking extends AbstractTableModel{
 	/**
 	 * Retourne la taille de la List de Checking checkings
 	 * 
-	 * @return La taille du paramètre checkings de TableModelChecking
+	 * @return La taille du paramÃ¨tre checkings de TableModelChecking
 	 */
 	@Override
 	public int getRowCount() {
@@ -61,7 +61,7 @@ public class TableModelChecking extends AbstractTableModel{
 	}
 
 	/**
-	 * Retourne l'Object se trouvant à la ligne rowIndex et la colonne columnIndex
+	 * Retourne l'Object se trouvant Ã  la ligne rowIndex et la colonne columnIndex
 	 * 
 	 * @return un Object
 	 */

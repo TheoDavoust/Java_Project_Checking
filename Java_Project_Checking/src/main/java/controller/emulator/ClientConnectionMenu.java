@@ -13,9 +13,9 @@ import javax.swing.Timer;
 import model.TimerSocket;
 
 /**
- * Contrôle le bouton "Connexion" de l'application "Emulateur"
+ * ContrÃ´le le bouton "Connexion" de l'application "Emulateur"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class ClientConnectionMenu extends AbstractAction{
@@ -24,11 +24,11 @@ public class ClientConnectionMenu extends AbstractAction{
 	private Timer timer;
 	
 	/**
-	 * Construit un ClientConnectionMenu à partir d'un Timer, d'un TimerSocket checking_action et d'un TimerSocket update_action donnés
+	 * Construit un ClientConnectionMenu Ã  partir d'un Timer, d'un TimerSocket checking_action et d'un TimerSocket update_action donnÃ©s
 	 * 
-	 * @param timer un Timer donné
-	 * @param checking_action un TimerSocket donné
-	 * @param update_action un TimerSocket donné
+	 * @param timer un Timer donnÃ©
+	 * @param checking_action un TimerSocket donnÃ©
+	 * @param update_action un TimerSocket donnÃ©
 	 */
 	public ClientConnectionMenu(Timer timer, TimerSocket checking_action, TimerSocket update_action) {
 		super("Connexion");
@@ -38,7 +38,7 @@ public class ClientConnectionMenu extends AbstractAction{
 	}
 
 	/**
-	 * Ouvre une boite de dialogue quand le bouton connexion est appuyé qui permet de changer le port de mis à jour, le port de pointage
+	 * Ouvre une boite de dialogue quand le bouton connexion est appuyÃ© qui permet de changer le port de mis Ã  jour, le port de pointage
 	 * et l'adresse IP du server
 	 */
 	@Override

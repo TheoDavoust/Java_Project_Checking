@@ -8,7 +8,9 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.JLabel;
 
 /**
- * @author Théo et Amaury
+ * Routine permettant d'actualiser l'affichage de l'heure
+ * 
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class EmulatorTimerClock implements ActionListener{
@@ -17,8 +19,8 @@ public class EmulatorTimerClock implements ActionListener{
 	private final DateTimeFormatter format;
 	
 	/**
-	 * Construit un EmulatorTimerClock à partir d'un JLabel
-	 * @param label un JLabel donné
+	 * Construit un EmulatorTimerClock Ã  partir d'un JLabel
+	 * @param label un JLabel donnÃ©
 	 */
 	public EmulatorTimerClock(JLabel label) {
 		this.format = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -26,7 +28,7 @@ public class EmulatorTimerClock implements ActionListener{
 	}
 	
 	/**
-	 * Fait apparaitre l'heure réel
+	 * Fait apparaitre l'heure rÃ©Ã©el
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e){

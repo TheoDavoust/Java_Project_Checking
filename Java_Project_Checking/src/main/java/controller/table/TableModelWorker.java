@@ -11,9 +11,9 @@ import javax.swing.table.AbstractTableModel;
 import model.Worker;
 
 /**
- * Contrôle l'onglet "Employés"
+ * ContrÃ´le la table de l'onglet "EmployÃ©s"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TableModelWorker extends AbstractTableModel{
@@ -23,10 +23,10 @@ public class TableModelWorker extends AbstractTableModel{
 	private JTable table;
 	
 	/**
-	 * Construit un TableModelWorker à partir d'une List de Worker et d'une JTable données
+	 * Construit un TableModelWorker Ã  partir d'une List de Worker et d'une JTable donnÃ©es
 	 * 
-	 * @param workers une List de Worker donnée
-	 * @param table une JTable donnée
+	 * @param workers une List de Worker donnÃ©e
+	 * @param table une JTable donnÃ©e
 	 */
 	public TableModelWorker(Vector<Worker> workers, JTable table) {
 		super();
@@ -37,7 +37,7 @@ public class TableModelWorker extends AbstractTableModel{
 	}
 	
 	/**
-	 * Retourne le nom de la colonne à l'index columnIndex
+	 * Retourne le nom de la colonne Ã  l'index columnIndex
 	 * 
 	 * @return Le nom de la colonne
 	 */
@@ -49,7 +49,7 @@ public class TableModelWorker extends AbstractTableModel{
 	/**
 	 * Retourne la taille de la List de Worker workers
 	 *
-	 * @return La taille du paramètre workers de TableModelWorker
+	 * @return La taille du paramÃ¨tre workers de TableModelWorker
 	 */
 	@Override
 	public int getRowCount() {
@@ -59,7 +59,7 @@ public class TableModelWorker extends AbstractTableModel{
 	/**
 	 * Retourne la taille du tableau d'Object columns
 	 * 
-	 * @return La taille du paramètre columns de TableModelWorker
+	 * @return La taille du paramÃ¨tre columns de TableModelWorker
 	 */
 	@Override
 	public int getColumnCount() {
@@ -67,7 +67,7 @@ public class TableModelWorker extends AbstractTableModel{
 	}
 
 	/**
-	 * Retourne un Object se trouvant à la ligne rowIndex et la colonne columnIndex
+	 * Retourne un Object se trouvant Ã  la ligne rowIndex et la colonne columnIndex
 	 * 
 	 * @return un Object
 	 */
@@ -85,7 +85,7 @@ public class TableModelWorker extends AbstractTableModel{
 	}
 	
 	/**
-	 * @author Théo et Amaury
+	 * @author ThÃ©o, Amaury et Louis
 	 * @version 12/06/2022
 	 */
 	public class deleteAction extends AbstractAction{
@@ -111,7 +111,7 @@ public class TableModelWorker extends AbstractTableModel{
 	}
 	
 	/**
-	 * @author Théo et Amaury
+	 * @author ThÃ©o, Amaury et Louis
 	 * @version 12/06/2022
 	 */
 	public class addAction extends AbstractAction{
@@ -139,7 +139,7 @@ public class TableModelWorker extends AbstractTableModel{
 	}
 	
 	/**
-	 * @author Théo et Amaury
+	 * @author ThÃ©o, Amaury et Louis
 	 * @version 12/06/2022
 	 */
 	public class modifierAction extends AbstractAction{

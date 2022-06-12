@@ -13,18 +13,34 @@ import model.Storage;
 import model.TimeTable;
 import model.Worker;
 
+/**
+ * Contrôle le menu déroulant de l'onglet "planning"
+ * 
+ * @author Théo, Amaury et Louis
+ * @version 12/06/2022
+ */
 public class WorkerSelector implements ActionListener{
 
 	private List<JLabel> labels;
 	private JComboBox<Worker> workers;
 	private Storage storage;
 	
+	/**
+	 * Constructeur
+	 * 
+	 * @param labels
+	 * @param workers
+	 * @param storage
+	 */
 	public WorkerSelector(List<JLabel> labels, JComboBox<Worker> workers, Storage storage) {
 		this.labels = labels;
 		this.workers = workers;
 		this.storage = storage;
 	}
 	
+	/**
+	 * Actualise l'affichage du planning d'un employé
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		TimeTable time_table = null;

@@ -13,9 +13,9 @@ import controller.table.TableModelWorker;
 import model.Storage;
 
 /**
- * Représente l'onglet "Employés"
+ * ReprÃ©sente l'onglet "EmployÃ©s"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TabWorker extends JPanel{
@@ -30,9 +30,9 @@ public class TabWorker extends JPanel{
 	private JPanel center_container;
 	
 	/**
-	 * Construit un TabWorker à partir d'un Storage donné, puis l'initialise
+	 * Construit un TabWorker Ã  partir d'un Storage donnÃ©, puis l'initialise
 	 * 
-	 * @param storage un Storage donné
+	 * @param storage un Storage donnÃ©
 	 */
 	public TabWorker(Storage storage) {
 		this.storage = storage;

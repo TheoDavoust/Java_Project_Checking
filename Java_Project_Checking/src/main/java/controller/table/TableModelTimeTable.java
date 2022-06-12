@@ -7,9 +7,9 @@ import model.Storage;
 import model.Worker;
 
 /**
- * Contrôle l'onglet "Planning"
+ * ContrÃ´le la table de l'onglet "Planning"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class TableModelTimeTable extends AbstractTableModel{
@@ -20,10 +20,10 @@ public class TableModelTimeTable extends AbstractTableModel{
 	private JComboBox<Worker> workers;
 	
 	/**
-	 * Construit TableModelTimeTable à partir d'un Storage et d'une JComboBox de Worker donnés
+	 * Construit TableModelTimeTable Ã  partir d'un Storage et d'une JComboBox de Worker donnÃ©s
 	 * 
-	 * @param storage un Storage donné
-	 * @param workers une JComboBox de Worker donnée
+	 * @param storage un Storage donnÃ©
+	 * @param workers une JComboBox de Worker donnÃ©e
 	 */
 	public TableModelTimeTable(Storage storage, JComboBox<Worker> workers) {
 		this.storage = storage;
@@ -31,7 +31,7 @@ public class TableModelTimeTable extends AbstractTableModel{
 	}
 	
 	/**
-	 *Retourne le nom de la colonne à l'index index
+	 *Retourne le nom de la colonne Ã  l'index index
 	 *
 	 *@return le nom de la colonne
 	 */
@@ -41,7 +41,9 @@ public class TableModelTimeTable extends AbstractTableModel{
 	}
 	
 	/**
+	 * Retourne le nombre de lignes
 	 * 
+	 * @return le nombre de lignes
 	 */
 	@Override
 	public int getRowCount() {
@@ -49,9 +51,9 @@ public class TableModelTimeTable extends AbstractTableModel{
 	}
 
 	/**
-	 * Retourne la taille de columns
+	 * Retourne le nombre de colonnes
 	 * 
-	 * @return La taille de columns
+	 * @return Le nombre de colonnes
 	 */
 	@Override
 	public int getColumnCount() {
@@ -59,7 +61,7 @@ public class TableModelTimeTable extends AbstractTableModel{
 	}
 
 	/**
-	 * Retourne l'Object se trouvant à la ligne rowIndex et la colonne columnIndex
+	 * Retourne l'Object se trouvant Ã  la ligne rowIndex et la colonne columnIndex
 	 * 
 	 * @return un Object
 	 */

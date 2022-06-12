@@ -5,7 +5,7 @@ import java.io.IOException;
 import view.util.FeedBackLabel;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public abstract class ServerThread extends Thread{
@@ -15,11 +15,11 @@ public abstract class ServerThread extends Thread{
 	protected SocketServer server;
 	
 	/**
-	 * Construit un ServerThread à partir d'un FeedBackLabel, d'un Storage et d'un port
+	 * Construit un ServerThread Ã  partir d'un FeedBackLabel, d'un Storage et d'un port
 	 * 
-	 * @param feedback  un FeedBackLabel donné
-	 * @param storage un Storage donné
-	 * @param port un port donné
+	 * @param feedback  un FeedBackLabel donnÃ©
+	 * @param storage un Storage donnÃ©
+	 * @param port un port donnÃ©
 	 */
 	public ServerThread(FeedBackLabel feedback, Storage storage, int port) {
 		this.feedback = feedback;
@@ -30,16 +30,16 @@ public abstract class ServerThread extends Thread{
 	/**
 	 * Retourne le port du ServerThread
 	 * 
-	 * @return Le paramètre port du ServerThread
+	 * @return Le paramÃ¨tre port du ServerThread
 	 */
 	public int getPort() {
 		return port;
 	}
 
 	/**
-	 * Remplace le port du ServerThread par un nouveau port donné
+	 * Remplace le port du ServerThread par un nouveau port donnÃ©
 	 * 
-	 * @param port un port donné
+	 * @param port un port donnÃ©
 	 */
 	public void setPort(int port) {
 		this.port = port;
@@ -48,7 +48,7 @@ public abstract class ServerThread extends Thread{
 	/**
 	 * Retourne le FeedBackLabel du ServerThread
 	 * 
-	 * @return Le paramètre feedback du ServerThread
+	 * @return Le paramÃ¨tre feedback du ServerThread
 	 */
 	public FeedBackLabel getFeedback() {
 		return feedback;
@@ -57,7 +57,7 @@ public abstract class ServerThread extends Thread{
 	/**
 	 * Remplace le FeedBackLabel du ServerThread par un nouveau FeedBackLabel
 	 * 
-	 * @param feedback un FeedBackLabel donné
+	 * @param feedback un FeedBackLabel donnÃ©
 	 */
 	public void setFeedback(FeedBackLabel feedback) {
 		this.feedback = feedback;
@@ -66,7 +66,7 @@ public abstract class ServerThread extends Thread{
 	/**
 	 * Retourne le Storage du ServerThread
 	 * 
-	 * @return Le paramètre storage du ServerThread
+	 * @return Le paramÃ¨tre storage du ServerThread
 	 */
 	public Storage getStorage() {
 		return storage;
@@ -75,14 +75,14 @@ public abstract class ServerThread extends Thread{
 	/**
 	 * Remplace le Storage du ServerThread par un nouveau Storage
 	 * 
-	 * @param storage un Storage donné
+	 * @param storage un Storage donnÃ©
 	 */
 	public void setStorage(Storage storage) {
 		this.storage = storage;
 	}
 
 	/**
-	 *
+	 * Routine d'interruption du thread
 	 */
 	@Override
 	public void interrupt() {

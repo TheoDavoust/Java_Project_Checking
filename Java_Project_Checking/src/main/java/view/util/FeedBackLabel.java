@@ -9,14 +9,14 @@ import javax.swing.JTextArea;
 import javax.swing.Timer;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class FeedBackLabel extends JTextArea{
 	private Timer timer;
 	
 	/**
-	 * Construit un FeedBackLabel par défaut et initialise sa police ainsi que timer et son controller
+	 * Construit un FeedBackLabel par dÃ©faut et initialise sa police ainsi que timer et son controller
 	 */
 	public FeedBackLabel() {
 		super();
@@ -37,9 +37,9 @@ public class FeedBackLabel extends JTextArea{
 	}
 	
 	/**
-	 * Change le texte de FeedBackLabel par un String donné si il y a un succès 
+	 * Change le texte de FeedBackLabel par un String donnÃ© si il y a un succÃ©s 
 	 * 
-	 * @param str un String donné
+	 * @param str un String donnÃ©
 	 */
 	public synchronized void success(String str) {
 		setForeground(new Color(51, 204, 51));
@@ -48,9 +48,9 @@ public class FeedBackLabel extends JTextArea{
 	}
 	
 	/**
-	 Change le texte de FeedBackLabel par un String donné si il y a une erreur 
+	 Change le texte de FeedBackLabel par un String donnÃ© si il y a une erreur 
 	 * 
-	 * @param str un String donné
+	 * @param str un String donnÃ©
 	 */
 	public synchronized void error(String str) {
 		setForeground(new Color(255, 26, 26));
@@ -59,9 +59,9 @@ public class FeedBackLabel extends JTextArea{
 	}
 	
 	/**
-	 Change le texte de FeedBackLabel par un String donné pour afficher une information 
+	 Change le texte de FeedBackLabel par un String donnÃ© pour afficher une information 
 	 * 
-	 * @param str un String donné
+	 * @param str un String donnÃ©
 	 */
 	public synchronized void info(String str) {
 		setForeground(new Color(0, 128, 255));
@@ -70,7 +70,7 @@ public class FeedBackLabel extends JTextArea{
 	}
 	
 	/**
-	 * Remet à 0 timer
+	 * Remet Ã  0 timer
 	 */
 	public void startClearTimer() {
 		timer.restart();

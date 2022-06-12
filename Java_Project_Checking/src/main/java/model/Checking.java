@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * Représente un pointage d'un Worker
+ * ReprÃ©sente un pointage d'un Worker
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class Checking implements Serializable, Comparable<Checking>{
@@ -15,19 +15,19 @@ public class Checking implements Serializable, Comparable<Checking>{
 	private LocalDate date;
 	
 	/**
-	 * Construit un Checking à partir d'un worker et de l'heure réel approximé
+	 * Construit un Checking Ã  partir d'un worker et de l'heure rÃ©el approximÃ©
 	 * 
-	 * @param worker un Worker donné
+	 * @param worker un Worker donnÃ©
 	 */
 	public Checking(Worker worker) {
 		this(worker, new RoundedTime());
 	}
 	
 	/**
-	 * Construit un Checking à partir d'un worker et d'une heure donnée
+	 * Construit un Checking Ã  partir d'un worker et d'une heure donnÃ©e
 	 * 
-	 * @param worker un Worker donné
-	 * @param time un RoundedTime donné
+	 * @param worker un Worker donnÃ©
+	 * @param time un RoundedTime donnÃ©
 	 */
 	public Checking(Worker worker, RoundedTime time) {
 		this.worker = worker;
@@ -36,63 +36,63 @@ public class Checking implements Serializable, Comparable<Checking>{
 	}
 
 	/**
-	 * Retourne le worker à qui appartient ce Checking
+	 * Retourne le worker Ã  qui appartient ce Checking
 	 * 
-	 * @return Le paramètre worker du Checking
+	 * @return Le paramÃ¨tre worker du Checking
 	 */
 	public Worker getWorker() {
 		return worker;
 	}
 
 	/**
-	 * Remplace le paramètre worker du Checking par un nouveau Worker
+	 * Remplace le paramÃ¨tre worker du Checking par un nouveau Worker
 	 * 
-	 * @param worker un Worker donné
+	 * @param worker un Worker donnÃ©
 	 */
 	public void setWorker(Worker worker) {
 		this.worker = worker;
 	}
 
 	/**
-	 * Retourne l'heure à laquelle ce Checking a été créé
+	 * Retourne l'heure Ã  laquelle ce Checking a Ã©tÃ© crÃ©Ã©
 	 * 
-	 * @return Le paramètre time du Checking
+	 * @return Le paramÃ¨tre time du Checking
 	 */
 	public RoundedTime getTime() {
 		return time;
 	}
 
 	/**
-	 * Remplace le paramètre time du Checking par un nouveau RoundedTime
+	 * Remplace le paramÃ¨tre time du Checking par un nouveau RoundedTime
 	 * 
-	 * @param time une heure approximée donnée
+	 * @param time une heure approximÃ©e donnÃ©e
 	 */
 	public void setTime(RoundedTime time) {
 		this.time = time;
 	}
 
 	/**
-	 * Retourne la date à laquelle ce Checking a été créé
+	 * Retourne la date Ã  laquelle ce Checking a Ã©tÃ© crÃ©Ã©
 	 * 
-	 * @return Le paramètre date du Checking
+	 * @return Le paramÃ©tre date du Checking
 	 */
 	public LocalDate getDate() {
 		return date;
 	}
 
 	/**
-	 * Remplace le paramètre date du Checking par un nouveau LocalDate
+	 * Remplace le paramÃ¨tre date du Checking par un nouveau LocalDate
 	 * 
-	 * @param date une date donnée
+	 * @param date une date donnÃ©e
 	 */
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	
 	/**
-	 * Retourne un booléen vrai si les paramètres de l'Object o sont les mêmes que ce Checking
+	 * Retourne un boolÃ©en vrai si les paramÃ¨tres de l'Object o sont les mÃ©mes que ce Checking
 	 * 
-	 * @return Un booléen
+	 * @return Un boolÃ©en
 	 */
 	@Override
 	public boolean equals(Object o) {

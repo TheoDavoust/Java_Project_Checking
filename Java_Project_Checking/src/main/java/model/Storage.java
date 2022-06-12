@@ -13,7 +13,7 @@ import java.util.Vector;
 /**
  * Stocke la liste des Worker, des Checking et des TimeTable
  * 
- * @author ThÈo et Amaury
+ * @author Th√©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class Storage {
@@ -37,16 +37,16 @@ public class Storage {
 	/**
 	 * Retourne la liste de Checking du Storage
 	 * 
-	 * @return Le paramËtre checkings du Storage
+	 * @return Le param√®tre checkings du Storage
 	 */
 	public Vector<Checking> getCheckings() {
 		return checkings;
 	}
 
 	/**
-	 * Remplace la liste de Checking du Storage par une nouvelle liste de Checking donnÈe
+	 * Remplace la liste de Checking du Storage par une nouvelle liste de Checking donn√©e
 	 * 
-	 * @param checkings une liste de Checking donnÈe
+	 * @param checkings une liste de Checking donn√©e
 	 */
 	public void setCheckings(Vector<Checking> checkings) {
 		this.checkings = checkings;
@@ -55,16 +55,16 @@ public class Storage {
 	/**
 	 * Retourne la liste de Worker du Storage
 	 * 
-	 * @return Le paramËtre workers du Storage
+	 * @return Le param√®tre workers du Storage
 	 */
 	public Vector<Worker> getWorkers() {
 		return workers;
 	}
 
 	/**
-	 * Remplace la liste de Worker du Storage par une nouvelle liste de Worker donnÈe
+	 * Remplace la liste de Worker du Storage par une nouvelle liste de Worker donn√©e
 	 * 
-	 * @param workers une liste de Worker donnÈe
+	 * @param workers une liste de Worker donn√©e
 	 */
 	public void setWorkers(Vector<Worker> workers) {
 		this.workers = workers;
@@ -73,23 +73,23 @@ public class Storage {
 	/**
 	 * Retourne la liste de TimeTable du Storage
 	 * 
-	 * @return Le paramËtre time_table du Storage
+	 * @return Le param√®tre time_table du Storage
 	 */
 	public Vector<TimeTable> getTime_table() {
 		return time_table;
 	}
 
 	/**
-	 * Remplace la liste de TimeTable du Storage par une nouvelle liste de TimeTable donnÈe
+	 * Remplace la liste de TimeTable du Storage par une nouvelle liste de TimeTable donn√©e
 	 * 
-	 * @param time_table une liste de TimeTable donnÈe
+	 * @param time_table une liste de TimeTable donn√©e
 	 */
 	public void setTime_table(Vector<TimeTable> time_table) {
 		this.time_table = time_table;
 	}
 
 	/**
-	 * 
+	 * Sauvegarde l'objet storage s√©rialis√© dans un fichier
 	 */
 	public void save() {
 		try (FileOutputStream file = new FileOutputStream(filename);
@@ -103,6 +103,8 @@ public class Storage {
 	}
 
 	/**
+	 * Charge un objet storage s√©rialis√© dans un fichier
+	 * 
 	 * @throws Exception Classe n'existe pas ou connection introuvable
 	 */
 	public void load() throws Exception {
@@ -117,7 +119,7 @@ public class Storage {
 	}
 
 	/**
-	 * Retourne un String possÈdant les composantes de Storage
+	 * Retourne un String poss√©dant les composantes de Storage
 	 * 
 	 * @return un String
 	 */

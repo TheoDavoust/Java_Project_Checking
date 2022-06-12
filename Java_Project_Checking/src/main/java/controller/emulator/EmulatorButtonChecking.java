@@ -13,7 +13,9 @@ import model.Worker;
 import view.util.FeedBackLabel;
 
 /**
- * @author Théo et Amaury
+ * DÃ©finie l'action du bouton de l'Ã©mulateur
+ * 
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class EmulatorButtonChecking implements ActionListener{
@@ -23,11 +25,11 @@ public class EmulatorButtonChecking implements ActionListener{
 	private Collection<Checking> queue;
 	
 	/**
-	 * Construit un EmulatorButtonChecking à partir d'un FeedBackLabel, d'une JComboBox de Worker et d'une Collection de Checking
+	 * Construit un EmulatorButtonChecking Ã  partir d'un FeedBackLabel, d'une JComboBox de Worker et d'une Collection de Checking
 	 * 
-	 * @param error_output un FeedBackLabel donné
-	 * @param field une JComboBox de Worker donnée
-	 * @param queue une Collection de Checking donnée
+	 * @param error_output un FeedBackLabel donnÃ©
+	 * @param field une JComboBox de Worker donnÃ©e
+	 * @param queue une Collection de Checking donnÃ©e
 	 */
 	public EmulatorButtonChecking(
 			FeedBackLabel error_output,
@@ -40,7 +42,7 @@ public class EmulatorButtonChecking implements ActionListener{
 	}
 	
 	/**
-	 * Permet d'entrer un nouveau pointage
+	 * Permet d'entrer un nouveau pointage, dans la queue
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

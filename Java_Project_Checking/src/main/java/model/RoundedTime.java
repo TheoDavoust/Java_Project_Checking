@@ -5,9 +5,9 @@ import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
 /**
- * Représente une heure approximée
+ * ReprÃ©sente une heure approximÃ©e
  * 
- * @author Théo et Amaury
+ * @author Theo, Amaury et Louis
  * @version 12/06/2022
  */
 public class RoundedTime implements Serializable, Comparable<RoundedTime>{
@@ -15,7 +15,7 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	private int minutes;
 	
 	/**
-	 * Construit par défaut une heure approximée à partir de l'heure réelle
+	 * Construit par dÃ©faut une heure approximÃ©e Ã  partir de l'heure rÃ©elle
 	 */
 	public RoundedTime() {
 		this(LocalTime.now());
@@ -31,7 +31,7 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	/**
 	 * Retourne l'heure du RoundedTime
 	 * 
-	 * @return Le paramètre hours du RoundedTime
+	 * @return Le paramÃ©tre hours du RoundedTime
 	 */
 	public int getHour() {
 		return hours;
@@ -40,7 +40,7 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	/**
 	 * Retourne les minutes du RoundedTime
 	 * 
-	 * @return Le paramètre minutes du RoundedTime
+	 * @return Le paramÃ¨tre minutes du RoundedTime
 	 */
 	public int getMinute() {
 		return minutes;
@@ -58,9 +58,9 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	}
 	
 	/**
-	 * Retourne un booléen vrai si les paramètres de l'Object o sont les mêmes que ce RoundedTime
+	 * Retourne un boolÃ©en vrai si les paramÃ¨tres de l'Object o sont les mÃªmes que ce RoundedTime
 	 * 
-	 * @return Un booléen
+	 * @return Un boolÃ©en
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -68,6 +68,9 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 		return hours == arg.hours && minutes == arg.minutes;
 	}
 	
+	/**
+	 * Retourne l'objet sous forme de chaine de charactÃ¨re
+	 */
 	@Override
 	public String toString() {
 		return String.format("%02d : %02d", hours, minutes);

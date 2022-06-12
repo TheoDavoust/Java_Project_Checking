@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * Représente un employé d'une entreprise
+ * ReprÃ©sente un employÃ© d'une entreprise
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class Worker implements Serializable{
@@ -14,35 +14,35 @@ public class Worker implements Serializable{
 	private String name;
 	
 	/**
-	 * Construit un worker en appelant un autre constructeur avec comme paramètre un UUID aléatoire
+	 * Construit un worker en appelant un autre constructeur avec comme paramÃ¨tre un UUID alÃ©atoire
 	 */
 	public Worker() {
 		this(UUID.randomUUID());
 	}
 	
 	/**
-	 * Construit un worker à partir d'un UUID donné
+	 * Construit un worker Ã  partir d'un UUID donnÃ©
 	 * 
-	 * @param id un UUID donné
+	 * @param id un UUID donnÃ©
 	 */
 	public Worker(UUID id) {
 		this(id, null);
 	}
 	
 	/**
-	 * Construit un worker en appelant un autre constructeur avec comme paramètre un UUID aléatoire et un nom donné
+	 * Construit un worker en appelant un autre constructeur avec comme paramÃ¨tre un UUID alÃ©atoire et un nom donnÃ©
 	 * 
-	 * @param name un nom donné
+	 * @param name un nom donnÃ©
 	 */
 	public Worker(String name) {
 		this(UUID.randomUUID(), name);
 	}
 	
 	/**
-	 * Construit un worker à partir d'un UUID et d'un nom donné
+	 * Construit un worker Ã  partir d'un UUID et d'un nom donnÃ©
 	 * 
-	 * @param id un UUID donné
-	 * @param name un nom donné
+	 * @param id un UUID donnÃ©
+	 * @param name un nom donnÃ©
 	 */
 	public Worker(UUID id, String name) {
 		this.id = id;
@@ -52,16 +52,16 @@ public class Worker implements Serializable{
 	/**
 	 * Retourne le nom de ce Worker
 	 * 
-	 * @return Le paramètre name du Worker
+	 * @return Le paramÃ¨tre name du Worker
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * Remplace le paramètre name du Worker par un nouveau nom
+	 * Remplace le paramÃ¨tre name du Worker par un nouveau nom
 	 * 
-	 * @param name un nom donné
+	 * @param name un nom donnÃ©
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -70,16 +70,16 @@ public class Worker implements Serializable{
 	/**
 	 * Retourne le UUID de ce Worker
 	 * 
-	 * @return Le paramètre id du Worker
+	 * @return Le paramÃ¨tre id du Worker
 	 */
 	public UUID getId() {
 		return id;
 	}
 	
 	/**
-	 * Remplace le paramètre id du Worker par un nouveau UUID
+	 * Remplace le paramÃ¨tre id du Worker par un nouveau UUID
 	 * 
-	 * @param id un UUID donné
+	 * @param id un UUID donnÃ©
 	 */
 	public void setId(UUID id) {
 		this.id = id;
@@ -98,7 +98,7 @@ public class Worker implements Serializable{
 	/**
 	 * Retourne le nom du Worker
 	 * 
-	 * @return Le paramètre name de Worker
+	 * @return Le paramÃ¨tre name de Worker
 	 */
 	@Override
 	public String toString() {
@@ -106,9 +106,9 @@ public class Worker implements Serializable{
 	}
 	
 	/**
-	 * Retourne un booléen vrai si les paramètres de l'Object o sont les mêmes que ce Checking
+	 * Retourne un boolÃ©en vrai si les paramÃ¨tres de l'Object o sont les mÃªmes que ce Checking
 	 * 
-	 * @return Un booléen
+	 * @return Un boolÃ©en
 	 */
 	@Override
 	public boolean equals(Object o) {

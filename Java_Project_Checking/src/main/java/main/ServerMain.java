@@ -5,12 +5,12 @@ import view.server.MainWindow;
 /**
  * Fonction main de l'application "Emulateur"
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class ServerMain {
 	/**
-	 * @param args le tableau des arguments communiqués
+	 * @param args le tableau des arguments communiquÃ©s
 	 */
 	public static void main(String[] args) {
 		MainWindow window = new MainWindow();

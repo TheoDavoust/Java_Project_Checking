@@ -7,12 +7,12 @@ import javax.swing.JLabel;
 /**
  * Un type de label
  * 
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
 public class SimpleLabel extends JLabel{
 	/**
-	 * Construit par défault un SimpleLabel
+	 * Construit par dÃ©fault un SimpleLabel
 	 */
 	public SimpleLabel() {
 		this.setHorizontalAlignment(JLabel.CENTER);
@@ -20,9 +20,9 @@ public class SimpleLabel extends JLabel{
 	}
 	
 	/**
-	 * Construit un SimpleLabel par défault puis change son texte avec un String donné
+	 * Construit un SimpleLabel par dÃ©fault puis change son texte avec un String donnÃ©
 	 * 
-	 * @param s un String donné
+	 * @param s un String donnÃ©
 	 */
 	public SimpleLabel(String s) {
 		this();

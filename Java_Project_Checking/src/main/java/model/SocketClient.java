@@ -6,56 +6,59 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * @author Théo et Amaury
+ * @author ThÃ©o, Amaury et Louis
  * @version 12/06/2022
  */
-public class SocketClient extends Socket{
+public class SocketClient extends Socket {
 	private String addr;
-	
+
 	/**
-	 * Construit un SocketClient à l'aide du constructeur de Socket 
+	 * Construit un SocketClient Ã  l'aide du constructeur de Socket
 	 * 
 	 * @throws IOException Connection introuvable
 	 */
-	public SocketClient() throws IOException{
+	public SocketClient() throws IOException {
 		super("127.0.0.1", 8090);
 	}
-	
+
 	/**
-	 * Construit un SocketClient à l'aide du constructeur de Socket, à partir d'une adresse IP donnée et d'un port donné
+	 * Construit un SocketClient Ã  l'aide du constructeur de Socket, Ã  partir d'une
+	 * adresse IP donnÃ©e et d'un port donnÃ©
 	 * 
-	 * @param addr une adresse IP donnée
-	 * @param port un port donné
+	 * @param addr une adresse IP donnÃ©e
+	 * @param port un port donnÃ©
 	 * @throws IOException Connection introuvable
 	 */
 	public SocketClient(String addr, int port) throws IOException {
 		super(addr, port);
 	}
-	
+
 	/**
-	 * Cette méthode permet d'envoyer un objet o à un Socket
-	 * @param o l'objet qui doit être envoyé
+	 * Cette mÃ©thode permet d'envoyer un objet o Ã  un Socket
+	 * 
+	 * @param o l'objet qui doit Ãªtre envoyÃ©
 	 * @throws IOException Connection introuvable
 	 */
 	public void sendObject(Object o) throws IOException {
-		if(!isConnected())
+		if (!isConnected())
 			throw new IOException();
-		
-		ObjectOutputStream out =  new ObjectOutputStream(getOutputStream());
+
+		ObjectOutputStream out = new ObjectOutputStream(getOutputStream());
 		out.writeObject(o);
 	}
-	
+
 	/**
-	 * Cette méthode permet de lire un objet reçu provenant d'un Socket et le retourne
+	 * Cette mÃ©thode permet de lire un objet reÃ§u provenant d'un Socket et le
+	 * retourne
 	 * 
-	 * @return L'objet in reçu
-	 * @throws IOException Connection introuvable
+	 * @return L'objet in reÃ§u
+	 * @throws IOException            Connection introuvable
 	 * @throws ClassNotFoundException Classe n'existe pas
 	 */
-	public Object readObject() throws IOException, ClassNotFoundException{
-		if(!isConnected())
+	public Object readObject() throws IOException, ClassNotFoundException {
+		if (!isConnected())
 			throw new IOException();
-		
+
 		ObjectInputStream in = new ObjectInputStream(getInputStream());
 		return in.readObject();
 	}
