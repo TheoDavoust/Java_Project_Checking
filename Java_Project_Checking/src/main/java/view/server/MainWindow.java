@@ -93,7 +93,7 @@ public class MainWindow extends JFrame{
 				
 		/* Init Onglets */
 		onglet.add("Employés", new TabWorker(storage));
-		onglet.add("Planning", new TabTimeTable());
+		onglet.add("Planning", new TabTimeTable(storage));
 		onglet.add("Historique des pointages", new TabCheckingHistory(storage));
 
 		getContentPane().add(feedback, BorderLayout.NORTH);
