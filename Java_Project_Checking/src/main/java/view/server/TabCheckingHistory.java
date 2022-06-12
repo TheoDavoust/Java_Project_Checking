@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import controller.tabcheckings.ActionRefreshButton;
 import controller.table.TableModelChecking;
 import model.Storage;
 
@@ -39,13 +40,14 @@ public class TabCheckingHistory extends JPanel{
 		this.storage = storage;
 		setLayout(new BorderLayout(50, 50));
 		
-		this.button_today = new JButton("Aujourd'hui");
-		this.button_alltime = new JButton("Tous");
-		this.button_refresh = new JButton("Refresh");
-		
 		this.table = new JTable();
 		table.setModel(new TableModelChecking(storage.getCheckings()));
 		table.setAutoCreateRowSorter(true);
+
+		this.button_today = new JButton("Aujourd'hui");
+		this.button_alltime = new JButton("Tous");
+		this.button_refresh = new JButton("Refresh");
+		this.button_refresh.setAction(new ActionRefreshButton((TableModelChecking)table.getModel(), storage));
 		
 		scroll = new JScrollPane(table);
 		
