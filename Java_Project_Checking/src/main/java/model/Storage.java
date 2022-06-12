@@ -25,7 +25,7 @@ public class Storage {
 		time_table = new Vector<TimeTable>();
 	}
 
-	public List<Checking> getCheckings() {
+	public Vector<Checking> getCheckings() {
 		return checkings;
 	}
 

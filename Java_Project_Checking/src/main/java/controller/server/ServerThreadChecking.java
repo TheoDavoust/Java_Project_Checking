@@ -33,7 +33,11 @@ public class ServerThreadChecking extends ServerThread{
 				Checking c = new Checking(ret, check.getTime());
 				c.setDate(check.getDate());
 				
-				server.sendObject(!storage.getCheckings().add(c));
+				boolean isIn = storage.getCheckings().contains(c);
+				server.sendObject(!isIn);
+				if(!isIn)
+					storage.getCheckings().add(c);
+				
 				server.closeSocket();
 			}
 		} catch (Exception e){
