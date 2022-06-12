@@ -7,13 +7,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.AbstractAction;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.Timer;
 
@@ -62,7 +59,7 @@ public class MainWindow extends JFrame{
 		}catch(Exception e) {
 			feedback.error(e.getMessage());
 		}
-		
+	
 		/* Creating Socket Threads */
 		this.thread_checking = new ServerThreadChecking(feedback, storage, 8090);
 		this.thread_update = new ServerThreadUpdate(feedback, storage, 8081);
