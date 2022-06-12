@@ -22,8 +22,11 @@ public class TimeTable implements Serializable{
 	 */
 	public TimeTable(Worker worker) {
 		super();
-		schedule = new HashMap<DayOfWeek, RoundedTime[]>();
+		this.schedule = new HashMap<DayOfWeek, RoundedTime[]>();
 		this.worker = worker;
+		for(int i = 1; i < 6; i++) {
+			this.schedule.put(DayOfWeek.of(i), new RoundedTime[2]);
+		}
 	}
 
 	/**

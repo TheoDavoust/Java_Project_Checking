@@ -1,10 +1,9 @@
 package controller.table;
 
 import java.awt.event.ActionEvent;
-import java.util.List;
+import java.util.Vector;
 
 import javax.swing.AbstractAction;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
@@ -19,7 +18,7 @@ import model.Worker;
  */
 public class TableModelWorker extends AbstractTableModel{
 
-	private List<Worker> workers;
+	private Vector<Worker> workers;
 	private final Object[] columns = {"Nom", "UUID"};
 	private JTable table;
 	
@@ -29,7 +28,7 @@ public class TableModelWorker extends AbstractTableModel{
 	 * @param workers une List de Worker donnée
 	 * @param table une JTable donnée
 	 */
-	public TableModelWorker(List<Worker> workers, JTable table) {
+	public TableModelWorker(Vector<Worker> workers, JTable table) {
 		super();
 	    
 		this.workers = workers;
@@ -134,7 +133,7 @@ public class TableModelWorker extends AbstractTableModel{
 			
 			if(name != null && !name.isBlank()){
 				workers.add(new Worker(name));
-				fireTableRowsInserted(getRowCount(), getColumnCount());
+				fireTableRowsInserted(getRowCount() - 1, getRowCount() - 1);
 			}
 		}
 	}

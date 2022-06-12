@@ -18,7 +18,10 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	 * Construit par défaut une heure approximée à partir de l'heure réelle
 	 */
 	public RoundedTime() {
-		LocalTime time = LocalTime.now();
+		this(LocalTime.now());
+	}
+	
+	public RoundedTime(LocalTime time) {
 		LocalTime rounded = time.truncatedTo(ChronoUnit.HOURS).plusMinutes(15 * (int)Math.round(time.getMinute() / 15.0));
 		
 		hours = rounded.getHour();
@@ -63,5 +66,10 @@ public class RoundedTime implements Serializable, Comparable<RoundedTime>{
 	public boolean equals(Object o) {
 		RoundedTime arg = (RoundedTime)o;
 		return hours == arg.hours && minutes == arg.minutes;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%02d : %02d", hours, minutes);
 	}
 }

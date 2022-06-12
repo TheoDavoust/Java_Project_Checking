@@ -3,6 +3,7 @@ package controller.emulator;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JComboBox;
 
@@ -18,7 +19,7 @@ import view.util.FeedBackLabel;
 public class EmulatorTimerUpdate extends TimerSocket {
 
 	private JComboBox<Worker> dropdown;
-	private List<Worker> workers;
+	private Vector<Worker> workers;
 
 	/**
 	 * Constuit un EmulatorTimerUpdat à partir d''une JComboBox de Worker et d'un FeedBackLabel
@@ -30,7 +31,7 @@ public class EmulatorTimerUpdate extends TimerSocket {
 		super("127.0.0.1", 8081, feedback);
 
 		this.dropdown = dropdown;
-		this.workers = new ArrayList<>();
+		this.workers = new Vector<>();
 	}
 
 	/**
@@ -45,7 +46,7 @@ public class EmulatorTimerUpdate extends TimerSocket {
 				socket.sendObject(true);
 			} else {
 				socket.sendObject(false);
-				workers = (List<Worker>) socket.readObject();
+				workers = (Vector<Worker>) socket.readObject();
 
 				dropdown.removeAllItems();
 				for (Worker w : workers)

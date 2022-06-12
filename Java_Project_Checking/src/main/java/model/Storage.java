@@ -8,8 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JPopupMenu.Separator;
+import java.util.Vector;
 
 /**
  * Stocke la liste des Worker, des Checking et des TimeTable
@@ -18,11 +17,10 @@ import javax.swing.JPopupMenu.Separator;
  * @version 12/06/2022
  */
 public class Storage {
-	private List<Checking> checkings;
-	private List<Worker> workers;
-	private List<TimeTable> time_table;
+	private Vector<Checking> checkings;
+	private Vector<Worker> workers;
+	private Vector<TimeTable> time_table;
 
-	private static final String separator = File.separator;
 	private static final String filename = "." + File.separator + "src" + File.separator + "main" + File.separator
 			+ "resources" + File.separator + "storage.dat";
 
@@ -31,9 +29,9 @@ public class Storage {
 	 */
 	public Storage() {
 		super();
-		checkings = new ArrayList<Checking>();
-		workers = new ArrayList<Worker>();
-		time_table = new ArrayList<TimeTable>();
+		checkings = new Vector<Checking>();
+		workers = new Vector<Worker>();
+		time_table = new Vector<TimeTable>();
 	}
 
 	/**
@@ -41,7 +39,7 @@ public class Storage {
 	 * 
 	 * @return Le paramètre checkings du Storage
 	 */
-	public List<Checking> getCheckings() {
+	public Vector<Checking> getCheckings() {
 		return checkings;
 	}
 
@@ -50,7 +48,7 @@ public class Storage {
 	 * 
 	 * @param checkings une liste de Checking donnée
 	 */
-	public void setCheckings(List<Checking> checkings) {
+	public void setCheckings(Vector<Checking> checkings) {
 		this.checkings = checkings;
 	}
 
@@ -59,7 +57,7 @@ public class Storage {
 	 * 
 	 * @return Le paramètre workers du Storage
 	 */
-	public List<Worker> getWorkers() {
+	public Vector<Worker> getWorkers() {
 		return workers;
 	}
 
@@ -68,7 +66,7 @@ public class Storage {
 	 * 
 	 * @param workers une liste de Worker donnée
 	 */
-	public void setWorkers(List<Worker> workers) {
+	public void setWorkers(Vector<Worker> workers) {
 		this.workers = workers;
 	}
 
@@ -77,7 +75,7 @@ public class Storage {
 	 * 
 	 * @return Le paramètre time_table du Storage
 	 */
-	public List<TimeTable> getTime_table() {
+	public Vector<TimeTable> getTime_table() {
 		return time_table;
 	}
 
@@ -86,7 +84,7 @@ public class Storage {
 	 * 
 	 * @param time_table une liste de TimeTable donnée
 	 */
-	public void setTime_table(List<TimeTable> time_table) {
+	public void setTime_table(Vector<TimeTable> time_table) {
 		this.time_table = time_table;
 	}
 
@@ -98,6 +96,7 @@ public class Storage {
 				ObjectOutputStream outs = new ObjectOutputStream(file)) {
 			outs.writeObject(checkings);
 			outs.writeObject(workers);
+			outs.writeObject(time_table);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -109,9 +108,9 @@ public class Storage {
 	public void load() throws Exception {
 		try (FileInputStream file = new FileInputStream(filename);
 				ObjectInputStream ins = new ObjectInputStream(file)) {
-			checkings = (List<Checking>) ins.readObject();
-			workers = (List<Worker>) ins.readObject();
-
+			checkings = (Vector<Checking>) ins.readObject();
+			workers = (Vector<Worker>) ins.readObject();
+			time_table = (Vector<TimeTable>) ins.readObject();
 		} catch (IOException | ClassNotFoundException e) {
 			throw e;
 		}

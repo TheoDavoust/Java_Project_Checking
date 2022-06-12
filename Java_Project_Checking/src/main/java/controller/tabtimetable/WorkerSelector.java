@@ -1,0 +1,50 @@
+package controller.tabtimetable;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.DayOfWeek;
+import java.util.List;
+
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+
+import model.RoundedTime;
+import model.Storage;
+import model.TimeTable;
+import model.Worker;
+
+public class WorkerSelector implements ActionListener{
+
+	private List<JLabel> labels;
+	private JComboBox<Worker> workers;
+	private Storage storage;
+	
+	public WorkerSelector(List<JLabel> labels, JComboBox<Worker> workers, Storage storage) {
+		this.labels = labels;
+		this.workers = workers;
+		this.storage = storage;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		TimeTable time_table = null;
+		for(TimeTable t : storage.getTime_table()) {
+			if(t.getWorker() == (Worker)workers.getSelectedItem()) {
+				time_table = t;
+			}
+		}
+		
+		if(time_table == null)
+			return;
+		
+		for(int i = 1; i < labels.size() + 1; i++) {
+			RoundedTime[] times = time_table.getSchedule().get(DayOfWeek.of(i));
+			labels.get(i - 1).setText(String.format(
+				"Début : %s, Fin : %s.",
+				times[0] != null ? times[0] : "aucune",
+				times[1] != null ? times[1] : "aucune"
+			));
+		}
+	}
+	
+}
