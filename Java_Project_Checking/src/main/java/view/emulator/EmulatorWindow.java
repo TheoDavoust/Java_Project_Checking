@@ -23,6 +23,12 @@ import model.TimerSocket;
 import model.Worker;
 import view.util.FeedBackLabel;
 
+/**
+ * Un type de fenêtre
+ * 
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class EmulatorWindow extends JFrame{
 	
 	private JPanel border_container;
@@ -40,6 +46,9 @@ public class EmulatorWindow extends JFrame{
 	
 	private Queue<Checking> queue;
 	
+	/**
+	 * Construit par défaut un EmulatorWindow puis l'initialise
+	 */
 	public EmulatorWindow() {
 		super();
 		
@@ -62,6 +71,9 @@ public class EmulatorWindow extends JFrame{
 		init();
 	}
 	
+	/**
+	 * Initialise EmulatorWindow sur son titre, sa taille, sa contenance et ses controllers
+	 */
 	public void init() {
 		setTitle("Emulateur de pointeuse");
 		setDefaultCloseOperation(EXIT_ON_CLOSE); 

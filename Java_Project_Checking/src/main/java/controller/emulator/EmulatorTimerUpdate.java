@@ -11,11 +11,21 @@ import model.TimerSocket;
 import model.Worker;
 import view.util.FeedBackLabel;
 
+/**
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class EmulatorTimerUpdate extends TimerSocket {
 
 	private JComboBox<Worker> dropdown;
 	private List<Worker> workers;
 
+	/**
+	 * Constuit un EmulatorTimerUpdat à partir d''une JComboBox de Worker et d'un FeedBackLabel
+	 * 
+	 * @param dropdown une JComboBox de Worker donnée
+	 * @param feedback un FeedBackLabel donné
+	 */
 	public EmulatorTimerUpdate(JComboBox<Worker> dropdown, FeedBackLabel feedback) {
 		super("127.0.0.1", 8081, feedback);
 
@@ -23,6 +33,9 @@ public class EmulatorTimerUpdate extends TimerSocket {
 		this.workers = new ArrayList<>();
 	}
 
+	/**
+	 * Permet de mettre à jour les employés de la pointeuse
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {

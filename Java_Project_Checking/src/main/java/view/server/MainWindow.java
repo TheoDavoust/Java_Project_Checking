@@ -23,6 +23,12 @@ import controller.server.ServerThreadUpdate;
 import model.Storage;
 import view.util.FeedBackLabel;
 
+/**
+ * Représente la fenêtre principale du server
+ * 
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class MainWindow extends JFrame{
 	
 	private FeedBackLabel feedback;
@@ -35,6 +41,9 @@ public class MainWindow extends JFrame{
 	private ServerThreadChecking thread_checking;
 	private ServerThreadUpdate thread_update;
 	
+	/**
+	 * Construit une MainWindow par défaut puis l'initialise
+	 */
 	public MainWindow() {
 		super();
 		
@@ -61,6 +70,9 @@ public class MainWindow extends JFrame{
 		init();
 	}
 	
+	/**
+	 * Initialise MainWindow sur son titre, sa taille, sa contenance et ses controllers
+	 */
 	public void init() {
 		/* Init Window */
 		setTitle("FÃ©nÃªtre principale");

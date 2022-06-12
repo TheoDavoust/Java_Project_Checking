@@ -7,12 +7,27 @@ import model.Storage;
 import model.Worker;
 import view.util.FeedBackLabel;
 
+/**
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class ServerThreadChecking extends ServerThread{
 	
+	/**
+	 * Construit un ServerThreadChecking à partir d'un FeedBackLabel, d'un Storage et d'un port donnés
+	 * 
+	 * @param feedback un FeedBackLabel donné
+	 * @param storage un Storage donné
+	 * @param port un port donné
+	 */
 	public ServerThreadChecking(FeedBackLabel feedback, Storage storage, int port) {
 		super(feedback, storage, port);
 	}
 
+	/**
+	 * Permet de recevoir un Checking à tout instant quand l'application est lancée, de vérifier l'intégrité du Checking
+	 * puis le stock si tout est bon
+	 */
 	@Override
 	public void run() {
 		try {

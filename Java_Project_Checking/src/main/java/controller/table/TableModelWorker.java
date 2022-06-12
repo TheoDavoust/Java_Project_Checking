@@ -11,12 +11,24 @@ import javax.swing.table.AbstractTableModel;
 
 import model.Worker;
 
+/**
+ * Contrôle l'onglet "Employés"
+ * 
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class TableModelWorker extends AbstractTableModel{
 
 	private List<Worker> workers;
 	private final Object[] columns = {"Nom", "UUID"};
 	private JTable table;
 	
+	/**
+	 * Construit un TableModelWorker à partir d'une List de Worker et d'une JTable données
+	 * 
+	 * @param workers une List de Worker donnée
+	 * @param table une JTable donnée
+	 */
 	public TableModelWorker(List<Worker> workers, JTable table) {
 		super();
 	    
@@ -25,21 +37,41 @@ public class TableModelWorker extends AbstractTableModel{
 		fireTableRowsInserted(getRowCount(), getColumnCount());
 	}
 	
+	/**
+	 * Retourne le nom de la colonne à l'index columnIndex
+	 * 
+	 * @return Le nom de la colonne
+	 */
 	@Override
 	public String getColumnName(int columnIndex) {
 		return (String) columns[columnIndex];
 	}
 	
+	/**
+	 * Retourne la taille de la List de Worker workers
+	 *
+	 * @return La taille du paramètre workers de TableModelWorker
+	 */
 	@Override
 	public int getRowCount() {
 		return workers.size();
 	}
 
+	/**
+	 * Retourne la taille du tableau d'Object columns
+	 * 
+	 * @return La taille du paramètre columns de TableModelWorker
+	 */
 	@Override
 	public int getColumnCount() {
 		return columns.length;
 	}
 
+	/**
+	 * Retourne un Object se trouvant à la ligne rowIndex et la colonne columnIndex
+	 * 
+	 * @return un Object
+	 */
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		Worker w = workers.get(rowIndex);
@@ -53,11 +85,21 @@ public class TableModelWorker extends AbstractTableModel{
 		}
 	}
 	
+	/**
+	 * @author Théo et Amaury
+	 * @version 12/06/2022
+	 */
 	public class deleteAction extends AbstractAction{
+		/**
+		 * Construit deleteAction avec un String
+		 */
 		public deleteAction() {
 			super("Supprimer");
 		}
 		
+		/**
+		 * Supprime une ligne de TableModelWorker, supprimant le worker de la workers, et le notifie
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int[] selected = table.getSelectedRows();
@@ -69,11 +111,21 @@ public class TableModelWorker extends AbstractTableModel{
 		}
 	}
 	
+	/**
+	 * @author Théo et Amaury
+	 * @version 12/06/2022
+	 */
 	public class addAction extends AbstractAction{
+		/**
+		 * Construit addAction avec un String
+		 */
 		public addAction(){
 			super("Ajouter");
 		}
 		
+		/**
+		 * Ouvre une boite de dialogue permettant d'ajouter un Worker, puis l'ajoute dans la List de Worker workers, et le notifie
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String name = (String)JOptionPane.showInputDialog(
@@ -87,11 +139,21 @@ public class TableModelWorker extends AbstractTableModel{
 		}
 	}
 	
+	/**
+	 * @author Théo et Amaury
+	 * @version 12/06/2022
+	 */
 	public class modifierAction extends AbstractAction{
+		/**
+		 * Construit modifierAction avec un String
+		 */
 		public modifierAction() {
 			super("Modifier");
 		}
 		
+		/**
+		 * Ouvre une boite de dialogue permettant de modifier un Worker, puis le modifie dans la List de Worker workers, et le notifie
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int row = table.getSelectedRow();

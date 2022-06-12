@@ -11,6 +11,12 @@ import java.util.List;
 
 import javax.swing.JPopupMenu.Separator;
 
+/**
+ * Stocke la liste des Worker, des Checking et des TimeTable
+ * 
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class Storage {
 	private List<Checking> checkings;
 	private List<Worker> workers;
@@ -20,6 +26,9 @@ public class Storage {
 	private static final String filename = "." + File.separator + "src" + File.separator + "main" + File.separator
 			+ "resources" + File.separator + "storage.dat";
 
+	/**
+	 * Construit un Storage
+	 */
 	public Storage() {
 		super();
 		checkings = new ArrayList<Checking>();
@@ -27,30 +36,63 @@ public class Storage {
 		time_table = new ArrayList<TimeTable>();
 	}
 
+	/**
+	 * Retourne la liste de Checking du Storage
+	 * 
+	 * @return Le paramètre checkings du Storage
+	 */
 	public List<Checking> getCheckings() {
 		return checkings;
 	}
 
+	/**
+	 * Remplace la liste de Checking du Storage par une nouvelle liste de Checking donnée
+	 * 
+	 * @param checkings une liste de Checking donnée
+	 */
 	public void setCheckings(List<Checking> checkings) {
 		this.checkings = checkings;
 	}
 
+	/**
+	 * Retourne la liste de Worker du Storage
+	 * 
+	 * @return Le paramètre workers du Storage
+	 */
 	public List<Worker> getWorkers() {
 		return workers;
 	}
 
+	/**
+	 * Remplace la liste de Worker du Storage par une nouvelle liste de Worker donnée
+	 * 
+	 * @param workers une liste de Worker donnée
+	 */
 	public void setWorkers(List<Worker> workers) {
 		this.workers = workers;
 	}
 
+	/**
+	 * Retourne la liste de TimeTable du Storage
+	 * 
+	 * @return Le paramètre time_table du Storage
+	 */
 	public List<TimeTable> getTime_table() {
 		return time_table;
 	}
 
+	/**
+	 * Remplace la liste de TimeTable du Storage par une nouvelle liste de TimeTable donnée
+	 * 
+	 * @param time_table une liste de TimeTable donnée
+	 */
 	public void setTime_table(List<TimeTable> time_table) {
 		this.time_table = time_table;
 	}
 
+	/**
+	 * 
+	 */
 	public void save() {
 		try (FileOutputStream file = new FileOutputStream(filename);
 				ObjectOutputStream outs = new ObjectOutputStream(file)) {
@@ -61,6 +103,9 @@ public class Storage {
 		}
 	}
 
+	/**
+	 * @throws Exception Classe n'existe pas ou connection introuvable
+	 */
 	public void load() throws Exception {
 		try (FileInputStream file = new FileInputStream(filename);
 				ObjectInputStream ins = new ObjectInputStream(file)) {
@@ -72,6 +117,11 @@ public class Storage {
 		}
 	}
 
+	/**
+	 * Retourne un String possédant les composantes de Storage
+	 * 
+	 * @return un String
+	 */
 	@Override
 	public String toString() {
 		return String.format("Storage :\n|%s\n|%s", checkings, workers);

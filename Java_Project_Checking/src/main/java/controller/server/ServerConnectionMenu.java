@@ -9,17 +9,30 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class ServerConnectionMenu extends AbstractAction {
 
 	private ServerThreadChecking thread_checking;
 	private ServerThreadUpdate thread_update;
 
+	/**
+	 * Construit un ServerConnectionMenu à partir d'un ServerThreadChecking et d'un ServerThreadUpdate donnés
+	 * 
+	 * @param thread_checking un ServerThreadChecking donné
+	 * @param thread_update un ServerThreadUpdate donné
+	 */
 	public ServerConnectionMenu(ServerThreadChecking thread_checking, ServerThreadUpdate thread_update) {
 		super("Connexion");
 		this.thread_checking = thread_checking;
 		this.thread_update = thread_update;
 	}
 
+	/**
+	 * Ouvre une boite de dialogue quand le bouton connexion est appuyé qui permet de changer le port de mis à jour, le port de pointage
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JPanel panel = new JPanel();

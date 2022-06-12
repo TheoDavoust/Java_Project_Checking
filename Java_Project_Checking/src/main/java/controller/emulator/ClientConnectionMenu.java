@@ -12,11 +12,24 @@ import javax.swing.Timer;
 
 import model.TimerSocket;
 
+/**
+ * Contrôle le bouton "Connexion" de l'application "Emulateur"
+ * 
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class ClientConnectionMenu extends AbstractAction{
 	private TimerSocket checking_action;
 	private TimerSocket update_action;
 	private Timer timer;
 	
+	/**
+	 * Construit un ClientConnectionMenu à partir d'un Timer, d'un TimerSocket checking_action et d'un TimerSocket update_action donnés
+	 * 
+	 * @param timer un Timer donné
+	 * @param checking_action un TimerSocket donné
+	 * @param update_action un TimerSocket donné
+	 */
 	public ClientConnectionMenu(Timer timer, TimerSocket checking_action, TimerSocket update_action) {
 		super("Connexion");
 		this.checking_action = checking_action;
@@ -24,6 +37,10 @@ public class ClientConnectionMenu extends AbstractAction{
 		this.timer = timer;
 	}
 
+	/**
+	 * Ouvre une boite de dialogue quand le bouton connexion est appuyé qui permet de changer le port de mis à jour, le port de pointage
+	 * et l'adresse IP du server
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JPanel panel = new JPanel();

@@ -5,12 +5,26 @@ import model.SocketServer;
 import model.Storage;
 import view.util.FeedBackLabel;
 
+/**
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class ServerThreadUpdate extends ServerThread{
 
+	/**
+	 * Construit un ServerThreadUpdate à partir d'un FeddBackLabel, d'un Storage et d'un port donnés
+	 * 
+	 * @param feedback un FeedBackLabel donné
+	 * @param storage un Storage donné
+	 * @param port un port donné
+	 */
 	public ServerThreadUpdate(FeedBackLabel feedback, Storage storage, int port) {
 		super(feedback, storage, port);
 	}
 
+	/**
+	 * Permet d'envoyer la liste des workers à la pointeuse si changement il y a eu
+	 */
 	@Override
 	public void run() {
 		try{

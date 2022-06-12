@@ -12,6 +12,12 @@ import javax.swing.JTable;
 import controller.table.TableModelWorker;
 import model.Storage;
 
+/**
+ * Représente l'onglet "Employés"
+ * 
+ * @author Théo et Amaury
+ * @version 12/06/2022
+ */
 public class TabWorker extends JPanel{
 	private Storage storage;
 	
@@ -23,6 +29,11 @@ public class TabWorker extends JPanel{
 	private JPanel bottom_container;
 	private JPanel center_container;
 	
+	/**
+	 * Construit un TabWorker à partir d'un Storage donné, puis l'initialise
+	 * 
+	 * @param storage un Storage donné
+	 */
 	public TabWorker(Storage storage) {
 		this.storage = storage;
 		setLayout(new BorderLayout(50, 50));
@@ -43,6 +54,9 @@ public class TabWorker extends JPanel{
 		init();
 	}
 	
+	/**
+	 * Initialise TabWorker sur sa taille et sa contenance
+	 */
 	public void init() {
 		bottom_container.setLayout(new GridLayout());
 		bottom_container.add(button_add);
