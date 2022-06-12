@@ -18,13 +18,15 @@ import model.Storage;
  * @version 12/06/2022
  */
 public class TabCheckingHistory extends JPanel{
-	private JButton button;
+	private Storage storage;
+
 	private JPanel center_container;
 	private JPanel bottom_container;
 	private JScrollPane scroll;
-	private Storage storage;
+
 	private JButton button_today;
 	private JButton button_alltime;
+	private JButton button_refresh;
 	
 	private JTable table;
 	
@@ -39,6 +41,7 @@ public class TabCheckingHistory extends JPanel{
 		
 		this.button_today = new JButton("Aujourd'hui");
 		this.button_alltime = new JButton("Tous");
+		this.button_refresh = new JButton("Refresh");
 		
 		this.table = new JTable();
 		table.setModel(new TableModelChecking(storage.getCheckings()));
@@ -58,6 +61,7 @@ public class TabCheckingHistory extends JPanel{
 	public void init() {
 		bottom_container.setLayout(new GridLayout());
 		bottom_container.add(button_today);
+		bottom_container.add(button_refresh);
 		bottom_container.add(button_alltime);
 		
 		center_container.setLayout(new GridLayout());
@@ -66,6 +70,5 @@ public class TabCheckingHistory extends JPanel{
 		
 		add(center_container, BorderLayout.CENTER);
 		add(bottom_container, BorderLayout.SOUTH);
-		
 	}
 }

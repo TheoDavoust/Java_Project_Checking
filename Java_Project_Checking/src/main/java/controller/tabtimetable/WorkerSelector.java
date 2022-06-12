@@ -50,11 +50,10 @@ public class WorkerSelector implements ActionListener{
 			}
 		}
 		
-		if(time_table == null)
-			return;
-		
+		RoundedTime[] times = {null, null};
 		for(int i = 1; i < labels.size() + 1; i++) {
-			RoundedTime[] times = time_table.getSchedule().get(DayOfWeek.of(i));
+			if(time_table != null)
+				times = time_table.getSchedule().get(DayOfWeek.of(i));
 			labels.get(i - 1).setText(String.format(
 				"Début : %s, Fin : %s.",
 				times[0] != null ? times[0] : "aucune",
