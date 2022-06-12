@@ -25,7 +25,7 @@ public class TableModelTimeTable extends AbstractTableModel{
 	
 	@Override
 	public int getRowCount() {
-		return (24 * 4) - 1;
+		return (24 * 4);
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class TableModelTimeTable extends AbstractTableModel{
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		if(columnIndex == 0) {
-			return String.format("%d:%d", rowIndex, (rowIndex * 15) % 60);
+			return String.format("%02d:%02d", rowIndex / 4, (rowIndex * 15) % 60);
 		}
 		return "";
 	}

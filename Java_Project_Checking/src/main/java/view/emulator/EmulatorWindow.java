@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import controller.emulator.ClientConnectionMenu;
-import controller.emulator.EmulatorTimerChekcing;
+import controller.emulator.EmulatorTimerChecking;
 import controller.emulator.EmulatorTimerClock;
 import controller.emulator.EmulatorTimerUpdate;
 import model.Checking;
@@ -86,7 +86,7 @@ public class EmulatorWindow extends JFrame{
 		/** Add timer methods **/
 		timer.addActionListener(new EmulatorTimerClock(current_time));
 		timer.getActionListeners()[0].actionPerformed(null);
-		timer.addActionListener(new EmulatorTimerChekcing(queue, feedback_output));
+		timer.addActionListener(new EmulatorTimerChecking(queue, feedback_output));
 		timer.addActionListener(new EmulatorTimerUpdate(dropdown, feedback_output));
 		timer.restart();
 		

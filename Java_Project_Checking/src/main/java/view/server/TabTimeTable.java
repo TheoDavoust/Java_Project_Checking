@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import controller.table.TableModelTimeTable;
@@ -30,6 +31,10 @@ public class TabTimeTable extends JPanel {
 	}
 
 	public void init() {
-		// add(new TableModelTimeTable(, null))
+		JScrollPane scroll = new JScrollPane(table);
+		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		
+		add(workers_box, BorderLayout.NORTH);
+		add(scroll, BorderLayout.CENTER);
 	}
 }

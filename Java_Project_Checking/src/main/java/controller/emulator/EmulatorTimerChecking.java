@@ -10,11 +10,11 @@ import model.TimerSocket;
 import model.Worker;
 import view.util.FeedBackLabel;
 
-public class EmulatorTimerChekcing extends TimerSocket {
+public class EmulatorTimerChecking extends TimerSocket {
 
 	private Queue<Checking> queue;
 
-	public EmulatorTimerChekcing(Queue<Checking> queue, FeedBackLabel feedback) {
+	public EmulatorTimerChecking(Queue<Checking> queue, FeedBackLabel feedback) {
 		super("127.0.0.1", 8090, feedback);
 		this.queue = queue;
 	}
