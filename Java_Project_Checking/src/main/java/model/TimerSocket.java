@@ -2,7 +2,7 @@ package model;
 
 import java.awt.event.ActionListener;
 
-import view.FeedBackLabel;
+import view.util.FeedBackLabel;
 
 public abstract class TimerSocket implements ActionListener{
 	protected SocketClient socket;

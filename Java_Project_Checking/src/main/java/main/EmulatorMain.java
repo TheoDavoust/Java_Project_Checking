@@ -1,6 +1,6 @@
 package main;
 
-import view.EmulatorWindow;
+import view.emulator.EmulatorWindow;
 
 public class EmulatorMain {
 

@@ -2,7 +2,7 @@ package model;
 
 import java.io.IOException;
 
-import view.FeedBackLabel;
+import view.util.FeedBackLabel;
 
 public abstract class ServerThread extends Thread{
 	protected FeedBackLabel feedback;

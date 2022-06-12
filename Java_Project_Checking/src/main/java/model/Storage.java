@@ -1,5 +1,6 @@
 package model;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,20 +9,24 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JPopupMenu.Separator;
+
 public class Storage {
 	private List<Checking> checkings;
 	private List<Worker> workers;
 	private List<TimeTable> time_table;
-	
-	private static final String filename = "./src/main/resources/storage.dat";
-	
+
+	private static final String separator = File.separator;
+	private static final String filename = "." + File.separator + "src" + File.separator + "main" + File.separator
+			+ "resources" + File.separator + "storage.dat";
+
 	public Storage() {
 		super();
 		checkings = new ArrayList<Checking>();
 		workers = new ArrayList<Worker>();
 		time_table = new ArrayList<TimeTable>();
 	}
-	
+
 	public List<Checking> getCheckings() {
 		return checkings;
 	}
@@ -47,26 +52,26 @@ public class Storage {
 	}
 
 	public void save() {
-		try(FileOutputStream file = new FileOutputStream(filename);
-				ObjectOutputStream outs = new ObjectOutputStream(file)){
+		try (FileOutputStream file = new FileOutputStream(filename);
+				ObjectOutputStream outs = new ObjectOutputStream(file)) {
 			outs.writeObject(checkings);
 			outs.writeObject(workers);
-		}catch(IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void load() throws Exception {
-		try(FileInputStream file = new FileInputStream(filename);
-				ObjectInputStream ins = new ObjectInputStream(file)){
-			checkings = (List<Checking>)ins.readObject();
-			workers = (List<Worker>)ins.readObject();
-			
-		}catch(IOException | ClassNotFoundException e) {
+		try (FileInputStream file = new FileInputStream(filename);
+				ObjectInputStream ins = new ObjectInputStream(file)) {
+			checkings = (List<Checking>) ins.readObject();
+			workers = (List<Worker>) ins.readObject();
+
+		} catch (IOException | ClassNotFoundException e) {
 			throw e;
 		}
 	}
-	
+
 	@Override
 	public String toString() {
 		return String.format("Storage :\n|%s\n|%s", checkings, workers);
